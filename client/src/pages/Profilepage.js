@@ -29,37 +29,37 @@ class Profilepage extends Component {
     // selectedButton: null,
   };
 
-  componentWillMount() {
-    //Checks if user is in DB first before hitting API
-    //If found populates page with cached DB data for rate limiting
-    //If not it calls getUser which hits riot API
-  }
+  // componentWillMount() {
+  //   //Checks if user is in DB first before hitting API
+  //   //If found populates page with cached DB data for rate limiting
+  //   //If not it calls getUser which hits riot API
+  // }
 
-  componentDidMount() {
-    //Binds this for button selection
-    // this.setSelectedButton = this.setSelectedButton.bind(this);
-    //Get Player Data
-    let queryUser = {
-      username: this.props.match.params.username.toLowerCase(),
-      region: this.props.match.params.region.toLowerCase()
-    };
-    API.findByUsername(queryUser).then(res =>
-      // console.log("findByUsername =====> res.data: ", res.data[0])
-      res.data[0] != undefined
-        ? this.setState(
-            {
-              profile: res.data[0].profile,
-              matches: res.data[0].matchData,
-              selectedPlayerData: res.data[0].selectedPlayerData,
-              rankedStats: res.data[0].rankedStats
-            },
-            function ree() {
-              console.log("this.state post DB payload: ", this.state);
-            }
-          )
-        : this.getUser()
-    );
-  }
+  // componentDidMount() {
+  //   //Binds this for button selection
+  //   // this.setSelectedButton = this.setSelectedButton.bind(this);
+  //   //Get Player Data
+  //   let queryUser = {
+  //     username: this.props.match.params.username.toLowerCase(),
+  //     region: this.props.match.params.region.toLowerCase()
+  //   };
+  //   API.findByUsername(queryUser).then(res =>
+  //     // console.log("findByUsername =====> res.data: ", res.data[0])
+  //     res.data[0] != undefined
+  //       ? this.setState(
+  //           {
+  //             profile: res.data[0].profile,
+  //             matches: res.data[0].matchData,
+  //             selectedPlayerData: res.data[0].selectedPlayerData,
+  //             rankedStats: res.data[0].rankedStats
+  //           },
+  //           function ree() {
+  //             console.log("this.state post DB payload: ", this.state);
+  //           }
+  //         )
+  //       : this.getUser()
+  //   );
+  // }
 
   //Get basic account ID info from Riot API if username is not found in DB
   //encrypted ID's are used for all other API calls
