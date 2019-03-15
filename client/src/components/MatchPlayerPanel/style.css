@@ -1,0 +1,89 @@
+.MatchPlayerPanel {
+  /* text-align: center; */
+  padding: 5px;
+  background-color: rgb(179, 179, 179);
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.playerIcon,
+.playerUsername,
+.playerKDA,
+.playerDamage,
+.playerWard,
+.playerCS,
+.playerLevel,
+.playerChampName {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.playerIcon {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  border: 2px solid #999999;
+  border-radius: 10px;
+}
+.spell1Icon,
+.spell2Icon,
+.playerItem0,
+.playerItem1,
+.playerItem2,
+.playerItem3,
+.playerItem4,
+.playerItem5,
+.playerItem6 {
+  height: 40px;
+  width: 40px;
+  border: 2px solid #999999;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.perkPrimaryIcon,
+.perkSubIcon {
+  border: 2px solid #999999;
+  border-radius: 10px;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  padding: 5px;
+  background-color: #616161;
+}
+
+.perkPrimaryIcon,
+.playerItem0,
+.playerItem6 {
+  margin-left: 5px;
+}
+
+.playerUsername {
+  font-size: 12px;
+  margin: 0px 5px 0px 10px;
+}
+
+.playerLevel {
+  font-size: 12px;
+}
+
+.iconContain {
+  float: right;
+  margin-top: 10px;
+}
+
+a {
+  color: #4a4a4a;
+}
+
+.playerLevel,
+.playerCS {
+  margin-right: 5px;
+}
