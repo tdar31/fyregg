@@ -14,6 +14,9 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/match" component={Matchpage} />
+          <Route exact path="/summoner/:username/:region" component={Profilepage} />
+          <Route exact path="/summoner/:username/:region/:theme" component={Profilepage} />
+          <Route exact path="/summoner/:username/:region/:matchData" component={Profilepage} />
           <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />
