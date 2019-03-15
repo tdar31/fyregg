@@ -4,7 +4,7 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import Matchpage from "./pages/Matchpage";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import Profilepage from "./pages/Profilepage";
 import Home from "./pages/Home";
 
 function App() {
