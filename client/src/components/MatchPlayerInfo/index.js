@@ -217,7 +217,6 @@ class MatchPlayerInfo extends Component {
 
   render() {
     return (
-      <div>fadsfdsafds</div>
       <div className="MatchPlayerInfo">
         {this.state.participants.map((partData, index) => (
           <MatchPlayerPanel
