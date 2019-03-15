@@ -19,7 +19,7 @@ class Home extends Component {
     inputValue: "",
     region: "",
     isOpen: false,
-    queryUser: ""
+    queryUser: "meteos"
   };
 
   componentDidMount() {
@@ -58,14 +58,15 @@ class Home extends Component {
     event.preventDefault();
 
     //Take in
-    let queryUser = this.state.inputValue.trim().toLowerCase();
+    let queryUser = "doublelift"
+    // let queryUser = this.state.inputValue.trim().toLowerCase();
     // let region = this.state.selectedButton.toUpperCase();
 
     this.setState({
       queryUser: queryUser
     });
 
-    window.location.assign("summoner/" + queryUser + "/NA/");
+    // window.location.assign("summoner/" + queryUser + "/NA/");
   };
 
   setSelectedButton(id) {
