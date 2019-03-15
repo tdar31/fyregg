@@ -14,9 +14,9 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/match" component={Matchpage} />
           <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} />
-          <Route exact path="/match" component={Matchpage} />
           <Route component={NoMatch} />
         </Switch>
       </div>

@@ -1,0 +1,62 @@
+.GameModuleItemInfo {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 13px;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin: 20px 20px 20px 0px !important;
+}
+
+.itemContainer {
+  display: inline-block;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.item0,
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6 {
+  height: 50px;
+  width: 50px;
+  border: 2px solid #999999;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.item0,
+.item1,
+.item3,
+.item4 {
+  margin-right: 5px;
+}
+
+.item2,
+.item5 {
+  margin-right: 15px;
+}
+
+.item6 {
+  display: inline-block;
+  margin-bottom: 12.5%;
+}
+
+.item0:hover,
+.item1:hover,
+.item2:hover,
+.item3:hover,
+.item4:hover,
+.item5:hover,
+.item6:hover {
+  box-shadow: 0 0 3px #333333;
+  cursor: pointer;
+}
