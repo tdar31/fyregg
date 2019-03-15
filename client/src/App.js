@@ -15,7 +15,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/match" component={Matchpage} />
           <Route
-            name="prof"
+            exact
             path="/summoner/:username/:region"
             component={Profilepage}
           />
