@@ -33,7 +33,7 @@ function SearchBar({ onClick, value, onChange, queryUser, region }) {
         </span>
       </p> */}
       <p className="control">
-        <Link to={`/summoner/${queryUser}/NA`} onClick={onClick}>
+        <Link to="prof" params={{ username: "hello", region: "NA" }}>
           <a className="button is-dark">Search</a>
         </Link>
         <a className="button is-success" onClick={onClick}>
