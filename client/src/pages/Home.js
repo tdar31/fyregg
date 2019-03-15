@@ -65,7 +65,7 @@ class Home extends Component {
       queryUser: queryUser
     });
 
-    // window.location.assign("summoner/" + queryUser + "/NA/");
+    window.location.assign("summoner/" + queryUser + "/NA/");
   };
 
   setSelectedButton(id) {

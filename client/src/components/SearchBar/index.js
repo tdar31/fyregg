@@ -39,7 +39,9 @@ function SearchBar({ onClick, value, onChange, queryUser, region }) {
             Search
           </a>
         </Link>
-        <a className="button is-success">OldButton</a>
+        <a className="button is-success" onClick={onClick}>
+          OldButton
+        </a>
       </p>
     </div>
   );
