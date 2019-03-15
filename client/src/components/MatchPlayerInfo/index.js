@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./style.css";
 import MatchPlayerPanel from "../MatchPlayerPanel";
-// const champJsonData = require("../../assets/jsonData/en_US/championFull.json");
-// const itemJsonData = require("../../assets/jsonData/en_US/item.json");
-// const summonerJsonData = require("../../assets/jsonData/en_US/summoner.json");
-// const runesJsonData = require("../../assets/jsonData/en_US/runesReforged.json");
+const champJsonData = require("../../assets/jsonData/en_US/championFull.json");
+const itemJsonData = require("../../assets/jsonData/en_US/item.json");
+const summonerJsonData = require("../../assets/jsonData/en_US/summoner.json");
+const runesJsonData = require("../../assets/jsonData/en_US/runesReforged.json");
 
 class MatchPlayerInfo extends Component {
   // state = {
@@ -218,46 +218,46 @@ class MatchPlayerInfo extends Component {
   render() {
     return (
       <div>fadsfdsafds</div>
-      // <div className="MatchPlayerInfo">
-      //   {this.state.participants.map((partData, index) => (
-      //     <MatchPlayerPanel
-      //       key={index}
-      //       win={partData.win}
-      //       championId={[`/images/tiles/${partData.championId}.jpg`].join(" ")}
-      //       championName={partData.championName}
-      //       playerLevel={partData.stats.champLevel}
-      //       playerUsername={partData.participantId}
-      //       playerPage={[`/summoner/${partData.participantId}/NA`].join(" ")}
-      //       cs={partData.cs}
-      //       csPM={partData.csPM}
-      //       kda={partData.kda}
-      //       kills={partData.kills}
-      //       assists={partData.assists}
-      //       deaths={partData.deaths}
-      //       spell1Id={[`/images/summonerspell/${partData.spell1Id}.png`].join(
-      //         " "
-      //       )}
-      //       spell2Id={[`/images/summonerspell/${partData.spell2Id}.png`].join(
-      //         " "
-      //       )}
-      //       perkPrimaryStyle={[
-      //         `/images/perk-images/Styles/${
-      //           partData.stats.perkPrimaryStyle
-      //         }.png`
-      //       ].join(" ")}
-      //       perkSubStyle={[
-      //         `/images/perk-images/Styles/${partData.stats.perkSubStyle}.png`
-      //       ].join(" ")}
-      //       item0={[`/images/item/${partData.stats.item0}.png`].join(" ")}
-      //       item1={[`/images/item/${partData.stats.item1}.png`].join(" ")}
-      //       item2={[`/images/item/${partData.stats.item2}.png`].join(" ")}
-      //       item3={[`/images/item/${partData.stats.item3}.png`].join(" ")}
-      //       item4={[`/images/item/${partData.stats.item4}.png`].join(" ")}
-      //       item5={[`/images/item/${partData.stats.item5}.png`].join(" ")}
-      //       item6={[`/images/item/${partData.stats.item6}.png`].join(" ")}
-      //     />
-      //   ))}
-      // </div>
+      <div className="MatchPlayerInfo">
+        {this.state.participants.map((partData, index) => (
+          <MatchPlayerPanel
+            key={index}
+            win={partData.win}
+            championId={[`/images/tiles/${partData.championId}.jpg`].join(" ")}
+            championName={partData.championName}
+            playerLevel={partData.stats.champLevel}
+            playerUsername={partData.participantId}
+            playerPage={[`/summoner/${partData.participantId}/NA`].join(" ")}
+            cs={partData.cs}
+            csPM={partData.csPM}
+            kda={partData.kda}
+            kills={partData.kills}
+            assists={partData.assists}
+            deaths={partData.deaths}
+            spell1Id={[`/images/summonerspell/${partData.spell1Id}.png`].join(
+              " "
+            )}
+            spell2Id={[`/images/summonerspell/${partData.spell2Id}.png`].join(
+              " "
+            )}
+            perkPrimaryStyle={[
+              `/images/perk-images/Styles/${
+                partData.stats.perkPrimaryStyle
+              }.png`
+            ].join(" ")}
+            perkSubStyle={[
+              `/images/perk-images/Styles/${partData.stats.perkSubStyle}.png`
+            ].join(" ")}
+            item0={[`/images/item/${partData.stats.item0}.png`].join(" ")}
+            item1={[`/images/item/${partData.stats.item1}.png`].join(" ")}
+            item2={[`/images/item/${partData.stats.item2}.png`].join(" ")}
+            item3={[`/images/item/${partData.stats.item3}.png`].join(" ")}
+            item4={[`/images/item/${partData.stats.item4}.png`].join(" ")}
+            item5={[`/images/item/${partData.stats.item5}.png`].join(" ")}
+            item6={[`/images/item/${partData.stats.item6}.png`].join(" ")}
+          />
+        ))}
+      </div>
     );
   }
 }
