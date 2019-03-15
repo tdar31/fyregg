@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function SearchBar({ onClick, value, onChange, region }) {
+function SearchBar({ onClick, value, onChange, queryUser, region }) {
   return (
     <div className="field has-addons has-addons-centered">
       <p className="control ">
@@ -33,7 +33,7 @@ function SearchBar({ onClick, value, onChange, region }) {
         </span>
       </p> */}
       <p className="control">
-        <Link to={"/summoner/goldenglue/NA"}>
+        <Link to={"/summoner/" + { queryUser } + "/NA"}>
           <a className="button is-dark">Search</a>
         </Link>
         <a className="button is-success" onClick={onClick}>

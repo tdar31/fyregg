@@ -18,7 +18,8 @@ class Home extends Component {
     selectedButton: 1,
     inputValue: "",
     region: "",
-    isOpen: false
+    isOpen: false,
+    queryUser: ""
   };
 
   componentDidMount() {
@@ -60,7 +61,11 @@ class Home extends Component {
     let queryUser = this.state.inputValue.trim().toLowerCase();
     // let region = this.state.selectedButton.toUpperCase();
 
-    window.location.assign("summoner/" + queryUser + "/NA/");
+    this.setState({
+      queryUser: queryUser
+    });
+
+    // window.location.assign("summoner/" + queryUser + "/NA/");
   };
 
   setSelectedButton(id) {
@@ -110,6 +115,7 @@ class Home extends Component {
             <i>Try Meteos, Goldenglue or Doublelift</i>
           </p>
           <SearchBar
+            queryUser={this.queryUser}
             onChange={this.handleInputChange}
             onClick={this.handleOnSubmit}
           />
