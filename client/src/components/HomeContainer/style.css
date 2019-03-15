@@ -1,0 +1,19 @@
+html {
+  /* overflow: hidden; */
+}
+
+.homeContainer {
+  /* background-image: radial-gradient(circle, #535f64, #2f3436); */
+  background-image: url("../../assets/backgrounds/noisy_net.png");
+}
+/* .hero.is-success {
+  background-image: radial-gradient(circle, #10a556, #0b1e11);
+}
+
+.hero.is-danger {
+  background-image: radial-gradient(circle, #e0a164, #552824);
+}
+
+.hero.is-info {
+  background-image: radial-gradient(circle, #0c77c7, #2a2f61);
+} */
