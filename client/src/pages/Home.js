@@ -58,7 +58,7 @@ class Home extends Component {
     event.preventDefault();
 
     //Take in
-    let queryUser = "doublelift"
+    let queryUser = "doublelift";
     // let queryUser = this.state.inputValue.trim().toLowerCase();
     // let region = this.state.selectedButton.toUpperCase();
 
@@ -115,6 +115,13 @@ class Home extends Component {
           <p className="suggest">
             <i>Try Meteos, Goldenglue or Doublelift</i>
           </p>
+
+          <ul>
+            <Link to={{ pathname: "/summoner/", search: "?username=netflix" }}>
+              <li>CLICK ME</li>
+            </Link>
+          </ul>
+          
           <SearchBar
             queryUser={this.queryUser}
             onChange={this.handleInputChange}

@@ -65,8 +65,8 @@ class Profilepage extends Component {
   //encrypted ID's are used for all other API calls
   getUser = () => {
     let queryUser = {
-      username: this.props.match.params.username,
-      region: this.props.match.params.region.toLowerCase()
+      username: this.props.location.search.split('=')[1],
+      region: "NA"
     };
     // console.log("Submit button clicked-> queryUser: ", queryUser);
     API.getUser(queryUser)
@@ -128,7 +128,7 @@ class Profilepage extends Component {
   getRankedData = () => {
     let rData = {
       username: this.state.profile.id,
-      region: this.props.match.params.region
+      region: "NA"
     };
     API.getRankedData(rData)
       .then(res => {
@@ -234,7 +234,7 @@ class Profilepage extends Component {
     // console.log("GET MATCH HISTORY: ", this.state.profile);
     let userData = {
       accountId: this.state.profile.accountId,
-      region: this.props.match.params.region
+      region: "NA"
     };
     API.getMatchHistory(userData)
       .then(res => {
@@ -271,7 +271,7 @@ class Profilepage extends Component {
   getMatchData = gameId => {
     let matchData = {
       accountId: this.state.profile.accountId,
-      region: this.props.match.params.region,
+      region: "NA",
       matchData: gameId
     };
 
