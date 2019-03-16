@@ -5,7 +5,6 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.18.0",
-    "query-string": "^6.4.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-notifications": "^1.4.3",

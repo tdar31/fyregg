@@ -12,7 +12,6 @@ import UserModule from "../components/UserModule";
 import UserNotFound from "../components/UserNotFound";
 import UtilPanel from "../components/UtilPanel";
 import Particles from "react-particles-js";
-import queryString from "query-string"
 
 class Profilepage extends Component {
   state = {
