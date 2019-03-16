@@ -56,25 +56,8 @@ class Home extends Component {
   handleOnSubmit = event => {
     // console.log("Submit button clicked");
     event.preventDefault();
+
     //Take in
-    // let queryUser = "doublelift";
-    let queryUser = this.state.inputValue.trim().toLowerCase();
-    // let region = this.state.selectedButton.toUpperCase();
-
-    this.setState({
-      queryUser: queryUser
-    });
-
-    window.location.assign("summoner/" + queryUser + "/NA/");
-  };
-
-  setSelectedButton(id) {
-    this.setState({ selectedButton: id }, function() {
-      // console.log("selectedBTN: ", this.state.selectedButton);
-    });
-  }
-
-  historyPush = () => {
     let queryUser = this.state.inputValue.trim().toLowerCase();
 
     this.setState(
@@ -82,10 +65,18 @@ class Home extends Component {
         queryUser: queryUser
       },
       function ree() {
-        this.props.history.push("/summoner/?username=" + this.state.queryUser);
+        this.props.history.push("/summoner/" + this.state.queryUser + "/NA/");
       }
     );
+
+    // window.location.assign("summoner/" + queryUser + "/NA/");
   };
+
+  setSelectedButton(id) {
+    this.setState({ selectedButton: id }, function() {
+      // console.log("selectedBTN: ", this.state.selectedButton);
+    });
+  }
 
   createNotification = () => {
     // return () => {
@@ -128,22 +119,22 @@ class Home extends Component {
             <i>Try Meteos, Goldenglue or Doublelift</i>
           </p>
 
-          <ul>
+          {/* <ul>
             <Link
               to={{
                 pathname: "/summoner/",
-                search: "?username=" + this.state.queryUser,
-                onClick: this.historyPush
+                // search: "?username=" + this.state.queryUser,
+                onClick: this.handleOnSubmit
               }}
             >
               <li>CLICK ME</li>
             </Link>
-          </ul>
+          </ul> */}
 
           <SearchBar
             queryUser={this.queryUser}
             onChange={this.handleInputChange}
-            onClick={this.historyPush}
+            onClick={this.handleOnSubmit}
           />
         </HomeBody>
       </HomeContainer>
