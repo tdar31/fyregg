@@ -36,9 +36,9 @@ function SearchBar({ onClick, value, onChange, queryUser, region }) {
         <p className="button is-dark">Search</p>
       </Link>
       <p className="control">
-        {/* <a className="button is-success" onClick={onClick}>
+        <a className="button is-success" onClick={onClick}>
           OldButton
-        </a> */}
+        </a>
       </p>
     </div>
   );

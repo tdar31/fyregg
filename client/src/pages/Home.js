@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as withRouter, Router, Link } from "react-router-dom";
 import {
   NotificationContainer,
   NotificationManager
@@ -48,7 +48,7 @@ class Home extends Component {
         inputValue: typedValue
       },
       function onceStateUpdated() {
-        // console.log("this.state.inputValue: ", this.state.inputValue);
+        console.log("this.state.inputValue: ", this.state.inputValue);
       }
     );
   };
@@ -56,10 +56,9 @@ class Home extends Component {
   handleOnSubmit = event => {
     // console.log("Submit button clicked");
     event.preventDefault();
-
     //Take in
-    let queryUser = "doublelift";
-    // let queryUser = this.state.inputValue.trim().toLowerCase();
+    // let queryUser = "doublelift";
+    let queryUser = this.state.inputValue.trim().toLowerCase();
     // let region = this.state.selectedButton.toUpperCase();
 
     this.setState({
@@ -74,6 +73,19 @@ class Home extends Component {
       // console.log("selectedBTN: ", this.state.selectedButton);
     });
   }
+
+  historyPush = () => {
+    let queryUser = this.state.inputValue.trim().toLowerCase();
+
+    this.setState(
+      {
+        queryUser: queryUser
+      },
+      function ree() {
+        this.props.history.push("/summoner/?username=" + this.state.queryUser);
+      }
+    );
+  };
 
   createNotification = () => {
     // return () => {
@@ -117,7 +129,13 @@ class Home extends Component {
           </p>
 
           <ul>
-            <Link to={{ pathname: "/summoner/", search: "?username=netflix" }}>
+            <Link
+              to={{
+                pathname: "/summoner/",
+                search: "?username=" + this.state.queryUser,
+                onClick: this.historyPush
+              }}
+            >
               <li>CLICK ME</li>
             </Link>
           </ul>
@@ -125,7 +143,7 @@ class Home extends Component {
           <SearchBar
             queryUser={this.queryUser}
             onChange={this.handleInputChange}
-            onClick={this.handleOnSubmit}
+            onClick={this.historyPush}
           />
         </HomeBody>
       </HomeContainer>
