@@ -33,11 +33,11 @@ function SearchBar({ onClick, value, onChange, queryUser, region }) {
         </span>
       </p> */}
       <p className="control">
-        <Link to={`/summoner/${queryUser}/NA`} >
-          <a className="button is-dark">Search</a>
+        <Link to={"/summoner/meteos/NA"}>
+          <p className="button is-dark">Search</p>
         </Link>
         <a className="button is-success" onClick={onClick}>
-          OldButton
+          {queryUser}
         </a>
       </p>
     </div>
