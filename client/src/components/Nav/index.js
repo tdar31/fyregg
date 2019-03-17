@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function Nav() {
@@ -9,14 +10,6 @@ function Nav() {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        {/* <a className="navbar-item" href="https://bulma.io">
-          <img
-            src="https://bulma.io/images/bulma-logo.png"
-            width="112"
-            height="28"
-          />
-        </a> */}
-
         <a
           role="button"
           className="navbar-burger burger"
@@ -32,9 +25,14 @@ function Nav() {
 
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item" href="/">
+          <Link to="/">
+            <a className="navbar-item" href="">
+              Home
+            </a>
+          </Link>
+          {/* <a className="navbar-item" href="/">
             Home
-          </a>
+          </a> */}
 
           <a className="navbar-item champItem">Champions</a>
           <a className="navbar-item itemItem">Items</a>

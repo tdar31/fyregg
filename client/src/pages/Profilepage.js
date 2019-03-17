@@ -11,6 +11,7 @@ import RankedModule from "../components/RankedModule";
 import UserModule from "../components/UserModule";
 import UserNotFound from "../components/UserNotFound";
 import UtilPanel from "../components/UtilPanel";
+import { withRouter } from 'react-router';
 import Particles from "react-particles-js";
 
 class Profilepage extends Component {
@@ -25,55 +26,60 @@ class Profilepage extends Component {
     dbUsername: "",
     inputValue: "",
     loadingStatus: "active",
-    error: false
+    error: false,
+    queryUser: ""
     // selectedButton: null,
   };
 
-  // componentWillMount() {
-  //   //Checks if user is in DB first before hitting API
-  //   //If found populates page with cached DB data for rate limiting
-  //   //If not it calls getUser which hits riot API
-  // }
+  componentWillMount() {
+    //Checks if user is in DB first before hitting API
+    //If found populates page with cached DB data for rate limiting
+    //If not it calls getUser which hits riot API
+  }
 
-  // componentDidMount() {
-  //   //Binds this for button selection
-  //   // this.setSelectedButton = this.setSelectedButton.bind(this);
-  //   //Get Player Data
-  //   let queryUser = {
-  //     username: this.props.match.params.username.toLowerCase(),
-  //     region: this.props.match.params.region.toLowerCase()
-  //   };
-  //   API.findByUsername(queryUser).then(res =>
-  //     // console.log("findByUsername =====> res.data: ", res.data[0])
-  //     res.data[0] != undefined
-  //       ? this.setState(
-  //           {
-  //             profile: res.data[0].profile,
-  //             matches: res.data[0].matchData,
-  //             selectedPlayerData: res.data[0].selectedPlayerData,
-  //             rankedStats: res.data[0].rankedStats
-  //           },
-  //           function ree() {
-  //             console.log("this.state post DB payload: ", this.state);
-  //           }
-  //         )
-  //       : this.getUser()
-  //   );
-  // }
+  componentDidMount() {
+    //Binds this for button selection
+    // this.setSelectedButton = this.setSelectedButton.bind(this);
+    //Get Player Data
+    let queryUser = {
+      username: this.props.match.params.username.toLowerCase(),
+      region: this.props.match.params.region.toLowerCase()
+    };
+
+    API.findByUsername(queryUser).then(res =>
+      // console.log("findByUsername =====> res.data: ", res.data[0])
+      res.data[0] != undefined
+        ? this.setState(
+            {
+              profile: res.data[0].profile,
+              matches: res.data[0].matchData,
+              selectedPlayerData: res.data[0].selectedPlayerData,
+              rankedStats: res.data[0].rankedStats
+            },
+            function ree() {
+              console.log("this.state post DB payload: ", this.state);
+            }
+          )
+        : this.getUser(queryUser)
+    );
+  }
 
   //Get basic account ID info from Riot API if username is not found in DB
   //encrypted ID's are used for all other API calls
-  getUser = () => {
-    let queryUser = {
-      username: this.props.location.search.split('=')[1],
-      region: "NA"
-    };
+  getUser = queryUser => {
+    // let queryUser = {
+    //   username: this.props.match.params.username.toLowerCase(),
+    //   region: this.props.match.params.region.toLowerCase()
+    // };
+    console.log("GETUSER ", queryUser);
     // console.log("Submit button clicked-> queryUser: ", queryUser);
     API.getUser(queryUser)
-      .then(res =>
-        //this is where you change the user name to lowercase as
-        //a single word
-        this.correctUsername(res.data)
+      .then(
+        res =>
+          //this is where you change the user name to lowercase as
+          //a single word
+          this.correctUsername(res.data)
+        // console.log(res.data)
       )
       .catch(err => {
         console.log("ERR", err);
@@ -408,13 +414,13 @@ class Profilepage extends Component {
   handleOnLoadMoreClick = event => {
     event.preventDefault();
     console.log("LoadMore Button Clicked");
-    let iter = this.state.iterations + 5
+    let iter = this.state.iterations + 5;
     this.setState(
       {
-        iterations: iter,
+        iterations: iter
       },
       function resetLoading() {
-        console.log("this.state.iterations: ", this.state.iterations)
+        console.log("this.state.iterations: ", this.state.iterations);
         this.triggerUpdateClick();
         this.triggerLoader();
       }
@@ -450,8 +456,6 @@ class Profilepage extends Component {
     );
   };
 
-
-  
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     const { value } = event.target;
@@ -463,7 +467,7 @@ class Profilepage extends Component {
         inputValue: typedValue
       },
       function onceStateUpdated() {
-        // console.log("this.state.inputValue: ", this.state.inputValue);
+        console.log("this.state.inputValue: ", this.state.inputValue);
       }
     );
   };
@@ -474,7 +478,20 @@ class Profilepage extends Component {
 
     //Take in
     let queryUser = this.state.inputValue.trim().toLowerCase();
-    window.location = "http://localhost:3000/summoner/" + queryUser + "/NA";
+
+    this.setState(
+      {
+        queryUser: queryUser
+      },
+      function redirect() {
+        console.log("handleOnSubmit");
+        this.props.history.push("/summoner/" + this.state.queryUser + "/NA/");
+
+        // window.location.assign("summoner/" + queryUser + "/NA/");
+      }
+    );
+
+    // window.location.assign("summoner/" + queryUser + "/NA/");
   };
 
   render() {
@@ -622,4 +639,4 @@ class Profilepage extends Component {
   }
 }
 
-export default Profilepage;
+export default withRouter(Profilepage);

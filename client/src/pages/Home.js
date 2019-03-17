@@ -48,7 +48,7 @@ class Home extends Component {
         inputValue: typedValue
       },
       function onceStateUpdated() {
-        console.log("this.state.inputValue: ", this.state.inputValue);
+        // console.log("this.state.inputValue: ", this.state.inputValue);
       }
     );
   };
@@ -64,7 +64,7 @@ class Home extends Component {
       {
         queryUser: queryUser
       },
-      function ree() {
+      function redirect() {
         this.props.history.push("/summoner/" + this.state.queryUser + "/NA/");
       }
     );

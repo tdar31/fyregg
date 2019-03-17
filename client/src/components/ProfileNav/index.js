@@ -1,9 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function ProfileNav({ onClick, value, onChange, region }) {
   return (
-    <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+    <nav
+      className="navbar is-dark"
+      role="navigation"
+      aria-label="main navigation"
+    >
       <div className="navbar-brand">
         <a
           role="button"
@@ -20,10 +25,9 @@ function ProfileNav({ onClick, value, onChange, region }) {
 
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item" href="/">
-            Home
-          </a>
-
+          <Link to="/">
+            <a className="navbar-item" href="">Home</a>
+          </Link>
           <a className="navbar-item champItem">Champions</a>
           <a className="navbar-item itemItem">Items</a>
         </div>
