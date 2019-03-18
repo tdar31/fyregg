@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function MatchPlayerPanel({
@@ -32,17 +33,19 @@ function MatchPlayerPanel({
       <ReactTooltip place="top" type="dark" effect="solid" />
       <div className="MatchPlayerPanel">
         <img className="playerIcon" src={championId} />
-        <a className="playerUsername" href={playerPage}>
-          {playerUsername}
-        </a>
+
+        <Link to={playerPage}>
+          <a className="playerUsername">{playerUsername}</a>
+        </Link>
+
         <p className="playerLevel">Level: {playerLevel}</p>
 
         {/* <p className="playerDamage">Damage</p>
         <p className="playerWard">Ward</p> */}
         <p className="playerCS">
-          {cs} ({csPM}) CS 
+          {cs} ({csPM}) CS
         </p>
-        <p className="playerKDA">KDA: {kda}</p> 
+        <p className="playerKDA">KDA: {kda}</p>
         <div className="helper iconContain">
           <img className="helper spell1Icon" src={spell1Id} />
           <img className="helper spell2Icon" src={spell2Id} />

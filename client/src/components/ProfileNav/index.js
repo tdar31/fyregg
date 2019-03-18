@@ -26,13 +26,13 @@ function ProfileNav({ onClick, value, onChange, region }) {
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
           <Link to="/">
-            <a className="navbar-item" href="">Home</a>
+            <a className="navbar-item">Home</a>
           </Link>
           <a className="navbar-item champItem">Champions</a>
           <a className="navbar-item itemItem">Items</a>
         </div>
 
-        <div className="navbar-end">
+        {/* <div className="navbar-end">
           <div className="navbar-item">
             <p className="">
               <input
@@ -51,7 +51,7 @@ function ProfileNav({ onClick, value, onChange, region }) {
               </a>
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

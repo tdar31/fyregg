@@ -11,7 +11,7 @@ import RankedModule from "../components/RankedModule";
 import UserModule from "../components/UserModule";
 import UserNotFound from "../components/UserNotFound";
 import UtilPanel from "../components/UtilPanel";
-import { withRouter } from 'react-router';
+import { withRouter } from "react-router";
 import Particles from "react-particles-js";
 
 class Profilepage extends Component {
@@ -456,43 +456,56 @@ class Profilepage extends Component {
     );
   };
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    const { value } = event.target;
+  //https://github.com/ReactTraining/react-router/issues/1694
+  //https://stackoverflow.com/questions/32261441/component-does-not-remount-when-route-parameters-change
+  //https://medium.freecodecamp.org/hitchhikers-guide-to-react-router-v4-4b12e369d10
+  //https://github.com/ReactTraining/history#properties
+  //
 
-    let typedValue = value.split(" ").join("");
-    // Updating the input's state
-    this.setState(
-      {
-        inputValue: typedValue
-      },
-      function onceStateUpdated() {
-        console.log("this.state.inputValue: ", this.state.inputValue);
-      }
-    );
-  };
+  // handleInputChange = event => {
+  //   // Getting the value and name of the input which triggered the change
+  //   const { value } = event.target;
 
-  handleOnSubmit = event => {
-    // console.log("Submit button clicked");
-    event.preventDefault();
+  //   let typedValue = value.split(" ").join("");
+  //   // Updating the input's state
+  //   this.setState(
+  //     {
+  //       inputValue: typedValue
+  //     },
+  //     function onceStateUpdated() {
+  //       // console.log("this.state.inputValue: ", this.state.inputValue);
+  //     }
+  //   );
+  // };
 
-    //Take in
-    let queryUser = this.state.inputValue.trim().toLowerCase();
+  // handleOnSubmit = event => {
+  //   // console.log("Submit button clicked");
+  //   event.preventDefault();
 
-    this.setState(
-      {
-        queryUser: queryUser
-      },
-      function redirect() {
-        console.log("handleOnSubmit");
-        this.props.history.push("/summoner/" + this.state.queryUser + "/NA/");
+  //   //Take in
+  //   let queryUser = this.state.inputValue.trim().toLowerCase();
 
-        // window.location.assign("summoner/" + queryUser + "/NA/");
-      }
-    );
+  //   this.setState(
+  //     {
+  //       queryUser: queryUser
+  //     },
+  //     function redirect() {
+  //       // console.log("handleOnSubmit");
 
-    // window.location.assign("summoner/" + queryUser + "/NA/");
-  };
+  //       this.props.history.push("/summoner/" + this.state.queryUser + "/NA/");
+  //       // let ree = "/summoner/" + this.state.queryUser + "/NA/";
+
+  //       // this.props.history.push({
+  //       //   pathname: ree,
+  //       //   key: this.props.location.key
+  //       // });
+
+  //       // window.location.assign("summoner/" + queryUser + "/NA/");
+  //     }
+  //   );
+
+  //   // window.location.assign("summoner/" + queryUser + "/NA/");
+  // };
 
   render() {
     return this.state.error ? (
@@ -501,8 +514,8 @@ class Profilepage extends Component {
       <div>
         <ProfileContainer className={this.state.theme}>
           <ProfileNav
-            onChange={this.handleInputChange}
-            onClick={this.handleOnSubmit}
+            // onChange={this.handleInputChange}
+            // onClick={this.handleOnSubmit}
           />
           <ProfileBody>
             <UserNotFound />

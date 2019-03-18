@@ -1,11 +1,15 @@
 import React from "react";
-// import ReactTooltip from "react-tooltip";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function GameModuleFullMatchInfo({ gameId }) {
   return (
     <div className="GameModuleFullMatchInfo">
-      <a className="fullMatchText" href={gameId}>View<br></br>Match Details</a>
+      <Link to={gameId}>
+        <a className="fullMatchText">
+          View<br />Match Details
+        </a>
+      </Link>
     </div>
   );
 }
