@@ -6,6 +6,8 @@ import Matchpage from "./pages/Matchpage";
 import NoMatch from "./pages/NoMatch";
 import Profilepage from "./pages/Profilepage";
 import Home from "./pages/Home";
+import Champion from "./pages/Champion";
+import Item from "./pages/Item";
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
           path="/summoner/:username/:region/:matchData"
           component={Profilepage}
         />
+        <Route exact path="/champion" component={Champion} />
+        <Route exact path="/item" component={Item} />
+        {/* <Route exact path="/champion/:champid" component={champion} /> */}
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
         <Route component={NoMatch} />

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import ProfileNav from "../components/ProfileNav";
+import Nav from "../components/Nav";
 import ProfileBody from "../components/ProfileBody";
 import ProfileContainer from "../components/ProfileContainer";
 import GameContainer from "../components/GameContainer";
@@ -513,7 +513,7 @@ class Profilepage extends Component {
       //NOT A 404 PAGE
       <div>
         <ProfileContainer className={this.state.theme}>
-          <ProfileNav
+          <Nav
             // onChange={this.handleInputChange}
             // onClick={this.handleOnSubmit}
           />
@@ -526,9 +526,9 @@ class Profilepage extends Component {
       //IF SUMMONER IS SUCCESSFULLY FOUND BY RIOT API
       <div>
         <ProfileContainer className={this.state.theme}>
-          <ProfileNav
-            onChange={this.handleInputChange}
-            onClick={this.handleOnSubmit}
+          <Nav
+            // onChange={this.handleInputChange}
+            // onClick={this.handleOnSubmit}
           />
           <ProfileBody>
             <UserBanner>

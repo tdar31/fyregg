@@ -9,6 +9,12 @@
   background-color: #701313;
 }
 
-.champItem:hover {
-  color: red;
+.navbar-item {
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+a.navbar-item:hover {
+  color: #701313;
+  background-color: #a3a3a3;
 }

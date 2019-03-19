@@ -30,14 +30,12 @@ function Nav() {
               Home
             </a>
           </Link>
-          {/* <a className="navbar-item" href="/">
-            Home
-          </a> */}
-
-          <a className="navbar-item champItem">Champions</a>
-          <a className="navbar-item itemItem">Items</a>
-          {/* <a className="navbar-item">Champions</a>
-          <a className="navbar-item">Champions</a> */}
+          <Link to="/champion">
+            <a className="navbar-item champItem">Champions</a>
+          </Link>
+          <Link to="/items">
+            <a className="navbar-item itemItem">Items</a>
+          </Link>
         </div>
       </div>
     </nav>

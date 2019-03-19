@@ -22,3 +22,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglis
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+//https://medium.com/@Keithweaver_/setting-up-mern-stack-on-aws-ec2-6dc599be4737

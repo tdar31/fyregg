@@ -1,3 +1,8 @@
 .searchBarInput {
   margin-bottom: 15vh;
 }
+
+.suggest {
+  color: whitesmoke;
+  margin-bottom: 25px;
+}
