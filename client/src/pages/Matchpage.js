@@ -5,7 +5,7 @@ import MatchContainer from "../components/MatchContainer";
 import MatchBody from "../components/MatchBody";
 import MatchPlayerInfo from "../components/MatchPlayerInfo";
 import MatchOverviewInfo from "../components/MatchOverviewInfo";
-import ProfileNav from "../components/ProfileNav";
+import Nav from "../components/Nav";
 
 class MatchPage extends Component {
   state = {
@@ -78,7 +78,7 @@ class MatchPage extends Component {
   render() {
     return (
       <MatchContainer>
-        <ProfileNav
+        <Nav
           // onChange={this.handleInputChange}
           // onClick={this.handleOnSubmit}
         />

@@ -30,11 +30,14 @@ function Nav() {
               Home
             </a>
           </Link>
-          <Link to="/champion">
+          <Link to="/champions">
             <a className="navbar-item champItem">Champions</a>
           </Link>
           <Link to="/items">
             <a className="navbar-item itemItem">Items</a>
+          </Link>
+          <Link to="/spells">
+            <a className="navbar-item spellItem">Spells</a>
           </Link>
         </div>
       </div>

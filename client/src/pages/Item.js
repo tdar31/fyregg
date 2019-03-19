@@ -4,7 +4,7 @@ import ProfileContainer from "../components/ProfileContainer";
 import Nav from "../components/Nav";
 import ProfileBody from "../components/ProfileBody";
 
-function Item() {
+function Items() {
   return (
     <div>
       <ProfileContainer>
@@ -28,4 +28,4 @@ function Item() {
   );
 }
 
-export default Item;
+export default Items;

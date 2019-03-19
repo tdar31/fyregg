@@ -8,6 +8,7 @@ import Profilepage from "./pages/Profilepage";
 import Home from "./pages/Home";
 import Champion from "./pages/Champion";
 import Item from "./pages/Item";
+import Spell from "./pages/Spell";
 
 function App() {
   return (
@@ -31,8 +32,9 @@ function App() {
           path="/summoner/:username/:region/:matchData"
           component={Profilepage}
         />
-        <Route exact path="/champion" component={Champion} />
-        <Route exact path="/item" component={Item} />
+        <Route exact path="/champions" component={Champion} />
+        <Route exact path="/items" component={Item} />
+        <Route exact path="/spells" component={Spell} />
         {/* <Route exact path="/champion/:champid" component={champion} /> */}
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
