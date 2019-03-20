@@ -2,3 +2,13 @@
   display: inline-block;
   margin-right: 25px;
 }
+
+.ChampItem {
+  text-align: center;
+  color: whitesmoke;
+  margin-bottom: 5px;
+}
+
+.champIconPage:hover {
+  box-shadow: 0 0 20px rgba(116, 116, 116, 0.6);
+}

@@ -17,8 +17,6 @@ function Items() {
                   Items
                   <br />
                 </p>
-                <img className="notFoundIMG" src="/images/splash/Amumu_8.jpg" />
-                <img />
               </div>
             </article>
           </div>
