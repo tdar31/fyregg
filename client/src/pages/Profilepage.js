@@ -641,6 +641,7 @@ class Profilepage extends Component {
                     perkSubStyleRawId={playerData.stats.perkSubStyle}
                     totalMinionsKilled={playerData.stats.totalMinionsKilled}
                     neutralMinionsKilled={playerData.stats.neutralMinionsKilled}
+                    
                   />
                 ))}
               </GameContainer>

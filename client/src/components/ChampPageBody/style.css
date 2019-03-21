@@ -1,0 +1,40 @@
+.bioCover {
+  height: 750px;
+  width: 1000px;
+  background: -moz-linear-gradient(
+    bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(187, 91, 91) 30%
+  );
+  z-index: 20;
+  position: fixed;
+  /* background-image: url("../../assets/backgrounds/noisy_net.png"); */
+}
+
+.classWrapper {
+  height: 578px;
+  margin-top: 43px;
+}
+
+.champSplash {
+  /* border-bottom: 10px solid whitesmoke; */
+  position: fixed;
+  width: 800px;
+  height: auto;
+  margin-right: 100px;
+  margin-left: 100px;
+  border-radius: 0px 0px 50px 1000px;
+  z-index: 20;
+}
+
+.champTitle {
+  position: fixed;
+  color: whitesmoke;
+  z-index: 30;
+  margin-top: 320px;
+  margin-left: 180px;
+  background-color: rgb(94, 94, 94);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 24px;
+}

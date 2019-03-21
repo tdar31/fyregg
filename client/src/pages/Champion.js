@@ -36,7 +36,6 @@ class Champion extends Component {
   }
 
   componentDidMount() {
-    
     // for (let i = 0; i < this.state.champKeyPairs.length; i++) {
     //   if (this.state.champKeyPairs[i].id === this.props.championIdRAW) {
     //     this.setState({
@@ -46,9 +45,7 @@ class Champion extends Component {
     // }
   }
 
-  handleOnClick() {
-    
-  }
+  handleOnClick() {}
 
   render() {
     return (
@@ -71,6 +68,7 @@ class Champion extends Component {
                 key={index}
                 championIdRAW={champData.name.toString()}
                 championId={[`/images/tiles/${champData.id}.jpg`].join(" ")}
+                linkToPage={[`/champions/${champData.name.toString()}`].join(" ")}
               />
             ))}
           </ProfileBody>

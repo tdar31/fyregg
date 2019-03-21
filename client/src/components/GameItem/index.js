@@ -43,7 +43,6 @@ class GameItem extends Component {
   };
 
   componentWillMount() {
-
     //Finds all items and pairs them with their ID in an array of objects for parsing through
     //For-in loop since json data provided by Riot is a single nested object
     for (var key in itemJsonData.data) {
@@ -370,6 +369,9 @@ class GameItem extends Component {
           spell2={process.env.PUBLIC_URL + this.props.spell2Id}
           spell2Name={this.state.spell2}
           role={this.props.role}
+          championLink={[`/champions/${this.state.champName}`].join(
+            " "
+          )}
         />
         <GameModuleStatsInfo
           kills={this.props.kills}

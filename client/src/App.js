@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Champion from "./pages/Champion";
 import Item from "./pages/Item";
 import Spell from "./pages/Spell";
+import ChampionPage from "./pages/ChampionPage";
 
 function App() {
   return (
@@ -33,9 +34,12 @@ function App() {
           component={Profilepage}
         />
         <Route exact path="/champions" component={Champion} />
+        <Route exact path="/champions/:champId" component={ChampionPage} />
         <Route exact path="/items" component={Item} />
         <Route exact path="/spells" component={Spell} />
-        {/* <Route exact path="/champion/:champid" component={champion} /> */}
+        {/* //
+        //
+        // */}
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
         <Route component={NoMatch} />

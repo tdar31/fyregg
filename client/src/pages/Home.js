@@ -68,7 +68,7 @@ class Home extends Component {
         this.props.history.push("/summoner/" + this.state.queryUser + "/NA/");
       }
     );
-
+    //
     // window.location.assign("summoner/" + queryUser + "/NA/");
   };
 
