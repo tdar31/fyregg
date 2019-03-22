@@ -1,15 +1,15 @@
 import React from "react";
 import "./style.css";
 
-function ChampPageBody({ ChampionName, ChampionTitle, championImage }) {
+function ChampPageBody({ championName, championTitle, championImage }) {
   return (
     <div className="classWrapper">
       <div className="bioCover"></div>
       <img className="champSplash" alt="img" src={championImage} />
       <p className="champTitle">
-        {ChampionName}
+        {championName}
         <br />
-        {ChampionTitle}
+        {championTitle}
       </p>
     </div>
   );
