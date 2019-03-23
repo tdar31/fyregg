@@ -110,15 +110,23 @@ class ChampionPage extends Component {
               championSpellQ={[
                 `/images/spell/${this.state.championSpellQ}`
               ].join(" ")}
+              championSpellQName={this.state.championSpellQName}
+              championSpellQDesc={this.state.championSpellQDesc}
               championSpellW={[
                 `/images/spell/${this.state.championSpellW}`
               ].join(" ")}
+              championSpellWName={this.state.championSpellWName}
+              championSpellWDesc={this.state.championSpellWDesc}
               championSpellE={[
                 `/images/spell/${this.state.championSpellE}`
               ].join(" ")}
+              championSpellEName={this.state.championSpellEName}
+              championSpellEDesc={this.state.championSpellEDesc}
               championSpellR={[
                 `/images/spell/${this.state.championSpellR}`
               ].join(" ")}
+              championSpellRName={this.state.championSpellRName}
+              championSpellRDesc={this.state.championSpellRDesc}
             />
           </ChampionBody>
         </ProfileContainer>
