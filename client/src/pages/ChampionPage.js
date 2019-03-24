@@ -20,14 +20,14 @@ class ChampionPage extends Component {
     championSpellQName: "",
     championSpellQDesc: "",
     championSpellW: "",
-    championSpellWName: "", 
+    championSpellWName: "",
     championSpellWDesc: "",
     championSpellE: "",
-    championSpellEName: "", 
+    championSpellEName: "",
     championSpellEDesc: "",
     championSpellR: "",
-    championSpellRName: "", 
-    championSpellRDesc: "",
+    championSpellRName: "",
+    championSpellRDesc: ""
   };
 
   componentWillMount() {
@@ -64,8 +64,8 @@ class ChampionPage extends Component {
             championSpells: champKeysArr.spells,
             championLore: champKeysArr.lore,
             championPassive: champKeysArr.passive.image.full,
-            championPassiveText: champKeysArr.passive.description,
-            championPassiveDesc: champKeysArr.passive.name,
+            championPassiveText: champKeysArr.passive.name,
+            championPassiveDesc: champKeysArr.passive.description,
             championSpellQ: champKeysArr.spells[0].image.full,
             championSpellQName: champKeysArr.spells[0].name,
             championSpellQDesc: champKeysArr.spells[0].description,
@@ -77,7 +77,7 @@ class ChampionPage extends Component {
             championSpellEDesc: champKeysArr.spells[2].description,
             championSpellR: champKeysArr.spells[3].image.full,
             championSpellRName: champKeysArr.spells[3].name,
-            championSpellRDesc: champKeysArr.spells[3].description,
+            championSpellRDesc: champKeysArr.spells[3].description
           },
           function update() {
             console.log("this.state: ", this.state);
@@ -101,7 +101,7 @@ class ChampionPage extends Component {
               championTitle={this.state.championTitle}
             />
             <ChampPageBio
-            championLore={this.state.championLore}
+              championLore={this.state.championLore}
               championPassive={[
                 `/images/passive/${this.state.championPassive}`
               ].join(" ")}

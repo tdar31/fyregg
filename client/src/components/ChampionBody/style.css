@@ -1,3 +1,7 @@
 .champBodyPage {
   background-color: aqua;
 }
+
+.pageBuffer {
+  margin-top: 80px
+}

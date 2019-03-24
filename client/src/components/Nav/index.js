@@ -4,15 +4,11 @@ import "./style.css";
 
 function Nav() {
   return (
-    <nav
-      className="navbar is-dark"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div className="navbar-brand">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
         <a
           role="button"
-          className="navbar-burger burger"
+          class="navbar-burger burger"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
@@ -23,12 +19,10 @@ function Nav() {
         </a>
       </div>
 
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
           <Link to="/">
-            <a className="navbar-item" href="">
-              Home
-            </a>
+            <a className="navbar-item">Home</a>
           </Link>
           <Link to="/champions">
             <a className="navbar-item champItem">Champions</a>

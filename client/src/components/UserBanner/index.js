@@ -4,7 +4,7 @@ import "./style.css";
 function UserBanner({ children }) {
   return (
     <div>
-      <div className="box">
+      <div className="box pageBuffer">
         <article className="media">{children}</article>
       </div>
     </div>

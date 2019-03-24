@@ -53,7 +53,7 @@ class Champion extends Component {
         <ProfileContainer>
           <Nav />
           <ProfileBody>
-            <div className="box">
+            <div className="box pageBuffer">
               <article className="media">
                 <div className="media-content userNotFoundContent">
                   <p className="userNotFoundText">

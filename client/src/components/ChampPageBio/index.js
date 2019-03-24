@@ -27,20 +27,20 @@ function ChampPageBio({
         {/*  */}
         {/*  */}
         <img className="passiveIcon" alt="imgPassive" src={championPassive} />
-        <p>{championPassiveText}</p>
-        <p>{championPassiveDesc}</p>
+        <span className="spellText">{championPassiveText}</span>
+        <p className="descriptionText">{championPassiveDesc}</p>
         <img className="passiveIcon" alt="imgQ" src={championSpellQ} />
-        <p>{championSpellQName}</p>
-        <p>{championSpellQDesc}</p>
+        <span className="spellText">{championSpellQName}</span>
+        <p className="descriptionText">{championSpellQDesc}</p>
         <img className="passiveIcon" alt="imgW" src={championSpellW} />
-        <p>{championSpellWName}</p>
-        <p>{championSpellWDesc}</p>
+        <span className="spellText">{championSpellWName}</span>
+        <p className="descriptionText">{championSpellWDesc}</p>
         <img className="passiveIcon" alt="imgE" src={championSpellE} />
-        <p>{championSpellEName}</p>
-        <p>{championSpellEDesc}</p>
+        <span className="spellText">{championSpellEName}</span>
+        <p className="descriptionText">{championSpellEDesc}</p>
         <img className="passiveIcon" alt="imgR" src={championSpellR} />
-        <p>{championSpellRName}</p>
-        <p>{championSpellRDesc}</p>
+        <span className="spellText">{championSpellRName}</span>
+        <p className="descriptionText">{championSpellRDesc}</p>
       </div>
     </div>
   );

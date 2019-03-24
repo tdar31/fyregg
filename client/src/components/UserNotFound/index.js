@@ -4,7 +4,7 @@ import "./style.css";
 function UserNotFound({ children }) {
   return (
     <div>
-      <div className="box">
+      <div className="box pageBuffer">
         <article className="media">
           <div className="media-content userNotFoundContent">
             <p className="userNotFoundText">
