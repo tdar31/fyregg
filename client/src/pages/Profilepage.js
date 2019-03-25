@@ -12,7 +12,7 @@ import UserModule from "../components/UserModule";
 import UserNotFound from "../components/UserNotFound";
 import UtilPanel from "../components/UtilPanel";
 import { withRouter } from "react-router";
-import Particles from "react-particles-js";
+// import Particles from "react-particles-js";
 
 class Profilepage extends Component {
   state = {

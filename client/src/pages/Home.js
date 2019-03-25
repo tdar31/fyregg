@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as withRouter, Router, Link } from "react-router-dom";
-import {
-  NotificationContainer,
-  NotificationManager
-} from "react-notifications";
+// import {
+//   NotificationContainer,
+//   NotificationManager
+// } from "react-notifications";
 import HomeContainer from "../components/HomeContainer";
 import HomeBody from "../components/HomeBody";
 import Nav from "../components/Nav";
@@ -24,11 +24,11 @@ class Home extends Component {
 
   componentDidMount() {
     this.setSelectedButton = this.setSelectedButton.bind(this);
-    NotificationManager.info(
-      "",
-      "Close after 3000msClose after 3000msClose after 3000msClose after 3000msClose after 3000msClose after 3000msClose after 3000ms",
-      30000
-    );
+    // NotificationManager.info(
+    //   "",
+    //   "Close after 3000msClose after 3000msClose after 3000msClose after 3000msClose after 3000msClose after 3000msClose after 3000ms",
+    //   30000
+    // );
   }
 
   toggle() {
