@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function GameModuleStatsInfo({
@@ -16,13 +17,27 @@ function GameModuleStatsInfo({
   creepScorePerMin,
   KDA,
   perkPrimaryStyleName,
-  perkSubStyleName
+  perkSubStyleName,
+  perkPrimaryLink,
+  perkSubLink
 }) {
   return (
     <div className="GameModuleStatsInfo">
       <ReactTooltip place="top" type="dark" effect="solid" />
-      <img data-tip={perkPrimaryStyleName} className="perkPrimaryStyle" src={perkPrimaryStyle} />
-      <img data-tip={perkSubStyleName} className="perkSubStyle" src={perkSubStyle} />
+      <Link to={perkPrimaryLink}>
+        <img
+          data-tip={perkPrimaryStyleName}
+          className="perkPrimaryStyle"
+          src={perkPrimaryStyle}
+        />
+      </Link>
+      <Link to={perkSubLink}>
+        <img
+          data-tip={perkSubStyleName}
+          className="perkSubStyle"
+          src={perkSubStyle}
+        />
+      </Link>
       <div className="totalMinionsKilled">
         {creepScore} <span className="csPM">({creepScorePerMin})</span> CS
       </div>

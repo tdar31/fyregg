@@ -383,8 +383,14 @@ class GameItem extends Component {
           perkPrimaryStyle={
             process.env.PUBLIC_URL + this.props.perkPrimaryStyle
           }
+          perkPrimaryLink={[`/spells/${this.state.perkPrimary}`].join(
+            " "
+          )}
           perkPrimaryStyleName={this.state.perkPrimary}
           perkSubStyle={process.env.PUBLIC_URL + this.props.perkSubStyle}
+          perkSubLink={[`/spells/${this.state.perkSub}`].join(
+            " "
+          )}
           perkSubStyleName={this.state.perkSub}
           totalMinionsKilled={this.props.totalMinionsKilled}
           creepScorePerMin={this.state.creepScorePerMin}
