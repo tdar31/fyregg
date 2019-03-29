@@ -369,9 +369,9 @@ class GameItem extends Component {
           spell2={process.env.PUBLIC_URL + this.props.spell2Id}
           spell2Name={this.state.spell2}
           role={this.props.role}
-          championLink={[`/champions/${this.state.champName}`].join(
-            " "
-          )}
+          championLink={[`/champions/${this.state.champName}`].join(" ")}
+          spell1Link={[`/spells/${this.state.spell1}`].join(" ")}
+          spell2Link={[`/spells/${this.state.spell2}`].join(" ")}
         />
         <GameModuleStatsInfo
           kills={this.props.kills}
@@ -383,14 +383,8 @@ class GameItem extends Component {
           perkPrimaryStyle={
             process.env.PUBLIC_URL + this.props.perkPrimaryStyle
           }
-          perkPrimaryLink={[`/spells/${this.state.perkPrimary}`].join(
-            " "
-          )}
           perkPrimaryStyleName={this.state.perkPrimary}
           perkSubStyle={process.env.PUBLIC_URL + this.props.perkSubStyle}
-          perkSubLink={[`/spells/${this.state.perkSub}`].join(
-            " "
-          )}
           perkSubStyleName={this.state.perkSub}
           totalMinionsKilled={this.props.totalMinionsKilled}
           creepScorePerMin={this.state.creepScorePerMin}

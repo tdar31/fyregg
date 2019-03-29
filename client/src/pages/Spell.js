@@ -15,18 +15,17 @@ class Spell extends Component {
     //
     //Swap Summoner ID with names
     for (var key in summonerJsonData.data) {
-      // console.log(key);
-      let summonerKeysArr = summonerJsonData.data[key].key;
+      let summonerKeysArr = summonerJsonData.data[key].key.toString();
       let summonerKeysName = summonerJsonData.data[key].name;
       let summonerKeyDesc = summonerJsonData.data[key].description;
-      // console.log(summonerKeysArr);
-      // console.log(summonerKeysName);
+
       let sums = {
         id: summonerKeysArr,
         name: summonerKeysName,
         desc: summonerKeyDesc
       };
-      // console.log(sums);
+      // console.log("sums: ", sums.id);
+
       this.setState(state => {
         //Pushing found match stats specific to player to new array which is passed down as props to game item
         const summonerKeyPairs = [...state.summonerKeyPairs, sums];
@@ -35,10 +34,6 @@ class Spell extends Component {
         };
       });
     }
-  }
-
-  componentDidMount() {
-    console.log("this.state.summonerKeyPairs: ", this.state.summonerKeyPairs);
   }
 
   render() {
@@ -61,10 +56,12 @@ class Spell extends Component {
               <SpellItem
                 key={index}
                 ItemIdRAW={summonerData.name.toString()}
-                ItemId={[`/images/summonerspell/${summonerData.id}.png`].join(" ")}
-                linkToPage={[`/spells/${summonerData.name.toString().toLowerCase()}`].join(
+                ItemId={[`/images/summonerspell/${summonerData.id}.png`].join(
                   " "
                 )}
+                linkToPage={[
+                  `/spells/${summonerData.name.toString().toLowerCase()}`
+                ].join(" ")}
               />
             ))}
           </ProfileBody>

@@ -8,7 +8,7 @@ function SpellItem({ linkToPage, ItemId, ItemIdRAW }) {
       <Link to={linkToPage}>
         <img className="spellIcon spellIconPage" alt="img" src={ItemId} />
       </Link>
-      <div className="spellItem">{ItemIdRAW}</div>
+      <div className="spellItemText">{ItemIdRAW}</div>
     </div>
   );
 }

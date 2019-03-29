@@ -11,7 +11,8 @@ function GameModuleChampInfo({
   spell2,
   spell1Name,
   spell2Name,
-  role
+  spell1Link,
+  spell2Link
 }) {
   return (
     <div className="GameModuleChampInfo">
@@ -20,8 +21,22 @@ function GameModuleChampInfo({
         <Link to={championLink}>
           <img alt="img" className="champIcon" src={champIcon} />
         </Link>
-        <img alt="img" className="spell1" data-tip={spell1Name} src={spell1} />
-        <img alt="img" className="spell2" data-tip={spell2Name} src={spell2} />
+        <Link to={spell1Link}>
+          <img
+            alt="img"
+            className="spell1"
+            data-tip={spell1Name}
+            src={spell1}
+          />
+        </Link>
+        <Link to={spell2Link}>
+          <img
+            alt="img"
+            className="spell2"
+            data-tip={spell2Name}
+            src={spell2}
+          />
+        </Link>
       </div>
       <div className="champName">{champName}</div>
     </div>
