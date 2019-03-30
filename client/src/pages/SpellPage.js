@@ -1,34 +1,22 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../components/Grid";
 import ProfileContainer from "../components/ProfileContainer";
+import SpellBody from "../components/SpellBody";
+import SpellHeader from "../components/SpellHeader";
+import SpellPageBody from "../components/SpellPageBody";
 import Nav from "../components/Nav";
 const summonerJsonData = require("../assets/jsonData/en_US/summoner.json");
 
 class ChampionPage extends Component {
   state = {
-    championName: "",
-    championData: {},
-    championNameId: "",
-    championTitle: "",
-    championLore: "",
-    championSpells: [],
-    championPassive: {},
-    championSpellQ: "",
-    championSpellQName: "",
-    championSpellQDesc: "",
-    championSpellW: "",
-    championSpellWName: "",
-    championSpellWDesc: "",
-    championSpellE: "",
-    championSpellEName: "",
-    championSpellEDesc: "",
-    championSpellR: "",
-    championSpellRName: "",
-    championSpellRDesc: ""
+    pageId: "",
+    spellId: "",
+    spellDesc: ""
   };
 
   componentWillMount() {
-    console.log(summonerJsonData);
+    this.setState({
+      pageId: this.props.match.params.spellId
+    });
 
     // //This is just a quick workaround for Nunu's name
     // if (this.props.match.params.champId === "Nunu") {
@@ -50,38 +38,25 @@ class ChampionPage extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    // for (var name in champJsonData.data) {
-    //   let champKeysArr = champJsonData.data[name];
-    //   if (this.state.championName === champKeysArr.name) {
-    //     this.setState(
-    //       {
-    //         championData: champKeysArr,
-    //         championNameId: champKeysArr.id,
-    //         championTitle: champKeysArr.title,
-    //         championSpells: champKeysArr.spells,
-    //         championLore: champKeysArr.lore,
-    //         championPassive: champKeysArr.passive.image.full,
-    //         championPassiveText: champKeysArr.passive.name,
-    //         championPassiveDesc: champKeysArr.passive.description,
-    //         championSpellQ: champKeysArr.spells[0].image.full,
-    //         championSpellQName: champKeysArr.spells[0].name,
-    //         championSpellQDesc: champKeysArr.spells[0].description,
-    //         championSpellW: champKeysArr.spells[1].image.full,
-    //         championSpellWName: champKeysArr.spells[1].name,
-    //         championSpellWDesc: champKeysArr.spells[1].description,
-    //         championSpellE: champKeysArr.spells[2].image.full,
-    //         championSpellEName: champKeysArr.spells[2].name,
-    //         championSpellEDesc: champKeysArr.spells[2].description,
-    //         championSpellR: champKeysArr.spells[3].image.full,
-    //         championSpellRName: champKeysArr.spells[3].name,
-    //         championSpellRDesc: champKeysArr.spells[3].description
-    //       },
-    //       function update() {
-    //         console.log("this.state: ", this.state);
-    //       }
-    //     );
-    //   }
-    // }
+    //
+    //Swap Summoner ID with names
+    for (var key in summonerJsonData.data) {
+      let summonerKeysArr = summonerJsonData.data[key].key;
+      let summonerKeysName = summonerJsonData.data[key].name;
+      if (this.state.pageId === summonerKeysName) {
+        // console.log(summonerJsonData.data[key]);
+
+        this.setState(
+          {
+            spellId: summonerJsonData.data[key].key,
+            spellDesc: summonerJsonData.data[key].description
+          },
+          function update() {
+            console.log("this.state: ", this.state);
+          }
+        );
+      }
+    }
   }
 
   render() {
@@ -89,43 +64,15 @@ class ChampionPage extends Component {
       <div>
         <ProfileContainer>
           <Nav />
-          {/* <ChampionBody>
-            <ChampPageBody
-              championImage={[
-                `/images/splash/${this.state.championNameId}_0.jpg`
+          <SpellBody>
+            <SpellHeader spellId={this.state.pageId} />
+            <SpellPageBody
+              spellDesc={this.state.spellDesc}
+              spellImage={[
+                `/images/summonerspell/${this.state.spellId}.png`
               ].join(" ")}
-              championName={this.state.championName}
-              championTitle={this.state.championTitle}
             />
-            <ChampPageBio
-              championLore={this.state.championLore}
-              championPassive={[
-                `/images/passive/${this.state.championPassive}`
-              ].join(" ")}
-              championPassiveText={this.state.championPassiveText}
-              championPassiveDesc={this.state.championPassiveDesc}
-              championSpellQ={[
-                `/images/spell/${this.state.championSpellQ}`
-              ].join(" ")}
-              championSpellQName={this.state.championSpellQName}
-              championSpellQDesc={this.state.championSpellQDesc}
-              championSpellW={[
-                `/images/spell/${this.state.championSpellW}`
-              ].join(" ")}
-              championSpellWName={this.state.championSpellWName}
-              championSpellWDesc={this.state.championSpellWDesc}
-              championSpellE={[
-                `/images/spell/${this.state.championSpellE}`
-              ].join(" ")}
-              championSpellEName={this.state.championSpellEName}
-              championSpellEDesc={this.state.championSpellEDesc}
-              championSpellR={[
-                `/images/spell/${this.state.championSpellR}`
-              ].join(" ")}
-              championSpellRName={this.state.championSpellRName}
-              championSpellRDesc={this.state.championSpellRDesc}
-            />
-          </ChampionBody> */}
+          </SpellBody>
         </ProfileContainer>
       </div>
     );

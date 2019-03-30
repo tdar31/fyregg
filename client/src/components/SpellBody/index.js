@@ -1,14 +1,14 @@
 import React from "react";
 import "./style.css";
 
-function MatchBody({ children }) {
+function SpellBody({ children }) {
   return (
     <div className="hero-body">
       <div className="container">
-        <div className="matchContain pageBuffer">{children}</div>
+        {children}
       </div>
     </div>
   );
 }
 
-export default MatchBody;
+export default SpellBody;

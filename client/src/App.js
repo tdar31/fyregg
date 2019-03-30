@@ -11,6 +11,7 @@ import Item from "./pages/Item";
 import Spell from "./pages/Spell";
 import ChampionPage from "./pages/ChampionPage";
 import SpellPage from "./pages/SpellPage";
+import Itempage from "./pages/Itempage";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="/champions" component={Champion} />
         <Route exact path="/champions/:champId" component={ChampionPage} />
         <Route exact path="/items" component={Item} />
+        <Route exact path="/items/:itemId" component={Itempage} />
         <Route exact path="/spells" component={Spell} />
         <Route exact path="/spells/:spellId" component={SpellPage} />
         {/* //

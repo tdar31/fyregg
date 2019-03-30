@@ -60,7 +60,7 @@ class Spell extends Component {
                   " "
                 )}
                 linkToPage={[
-                  `/spells/${summonerData.name.toString().toLowerCase()}`
+                  `/spells/${summonerData.name.toString()}`
                 ].join(" ")}
               />
             ))}
