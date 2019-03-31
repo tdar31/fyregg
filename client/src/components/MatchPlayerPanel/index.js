@@ -26,7 +26,9 @@ function MatchPlayerPanel({
   kda,
   kills,
   assists,
-  deaths
+  deaths,
+  spell1Link,
+  spell2Link
 }) {
   return (
     <div>
@@ -47,8 +49,12 @@ function MatchPlayerPanel({
         </p>
         <p className="playerKDA">KDA: {kda}</p>
         <div className="helper iconContain">
-          <img className="helper spell1Icon" src={spell1Id} />
-          <img className="helper spell2Icon" src={spell2Id} />
+          <Link to={spell1Link}>
+            <img className="helper spell1Icon" src={spell1Id} />
+          </Link>
+          {/* <Link to={spell2Link}> */}
+            <img className="helper spell2Icon" src={spell2Id} />
+          {/* </Link> */}
           <img className="helper perkPrimaryIcon" src={perkPrimaryStyle} />
           <img className="helper perkSubIcon" src={perkSubStyle} />
           <img className="helper playerItem0" src={item0} />
