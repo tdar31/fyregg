@@ -41,9 +41,6 @@ function MatchPlayerPanel({
         </Link>
 
         <p className="playerLevel">Level: {playerLevel}</p>
-
-        {/* <p className="playerDamage">Damage</p>
-        <p className="playerWard">Ward</p> */}
         <p className="playerCS">
           {cs} ({csPM}) CS
         </p>
@@ -52,9 +49,9 @@ function MatchPlayerPanel({
           <Link to={spell1Link}>
             <img className="helper spell1Icon" src={spell1Id} />
           </Link>
-          {/* <Link to={spell2Link}> */}
+          <Link to={spell2Link}>
             <img className="helper spell2Icon" src={spell2Id} />
-          {/* </Link> */}
+          </Link>
           <img className="helper perkPrimaryIcon" src={perkPrimaryStyle} />
           <img className="helper perkSubIcon" src={perkSubStyle} />
           <img className="helper playerItem0" src={item0} />

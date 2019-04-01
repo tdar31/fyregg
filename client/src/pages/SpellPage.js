@@ -41,7 +41,6 @@ class ChampionPage extends Component {
     //
     //Swap Summoner ID with names
     for (var key in summonerJsonData.data) {
-      let summonerKeysArr = summonerJsonData.data[key].key;
       let summonerKeysName = summonerJsonData.data[key].name;
       if (this.state.pageId === summonerKeysName) {
         // console.log(summonerJsonData.data[key]);

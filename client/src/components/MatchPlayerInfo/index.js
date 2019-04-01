@@ -209,14 +209,14 @@ class MatchPlayerInfo extends Component {
           },
           function() {
             console.log("postUsernameUpdate2: ", this.state.participants);
-            this.parseSummonerNames();
+            this.parseSummonerNamesOne();
           }
         );
       }
     }
   };
 
-  parseSummonerNames = () => {
+  parseSummonerNamesOne = () => {
     let tempParticipantsArr = [];
     for (let i = 0; i < this.state.participants.length; i++) {
       for (let j = 0; j < this.state.summonerKeyPairs.length; j++) {
@@ -224,8 +224,8 @@ class MatchPlayerInfo extends Component {
           this.state.participants[i].spell1Id.toString() ==
           this.state.summonerKeyPairs[j].id
         ) {
-          console.log(this.state.participants[i].spell1Id)
-          console.log(this.state.summonerKeyPairs[j].id)
+          console.log(this.state.participants[i].spell1Id);
+          console.log(this.state.summonerKeyPairs[j].id);
           let tempParticipant = Object.assign({}, this.state.participants[i]);
           tempParticipant.spell1IdName = this.state.summonerKeyPairs[j].name;
           tempParticipantsArr.push(tempParticipant);
@@ -237,7 +237,36 @@ class MatchPlayerInfo extends Component {
                 participants: tempParticipantsArr
               },
               function() {
-                // this.parseUsername();
+                this.parseSummonerNamesTwo();
+              }
+            );
+          }
+        }
+      }
+    }
+  };
+
+  parseSummonerNamesTwo = () => {
+    let tempParticipantsArr = [];
+    for (let i = 0; i < this.state.participants.length; i++) {
+      for (let j = 0; j < this.state.summonerKeyPairs.length; j++) {
+        if (
+          this.state.participants[i].spell2Id.toString() ==
+          this.state.summonerKeyPairs[j].id
+        ) {
+          console.log(this.state.participants[i].spell1Id);
+          console.log(this.state.summonerKeyPairs[j].id);
+          let tempParticipant = Object.assign({}, this.state.participants[i]);
+          tempParticipant.spell2IdName = this.state.summonerKeyPairs[j].name;
+          tempParticipantsArr.push(tempParticipant);
+          //
+          //Breaks loop
+          if (tempParticipantsArr.length === 10) {
+            this.setState(
+              {
+                participants: tempParticipantsArr
+              },
+              function() {
                 console.log("postSumNamesUpdate: ", this.state.participants);
               }
             );
@@ -272,7 +301,7 @@ class MatchPlayerInfo extends Component {
               " "
             )}
             spell1Link={[`/spells/${partData.spell1IdName}`].join(" ")}
-            // spell2Link={[`/spells/${this.state.spell2}`].join(" ")}
+            spell2Link={[`/spells/${partData.spell2IdName}`].join(" ")}
             perkPrimaryStyle={[
               `/images/perk-images/Styles/${
                 partData.stats.perkPrimaryStyle

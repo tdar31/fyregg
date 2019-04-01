@@ -394,18 +394,25 @@ class GameItem extends Component {
         <GameModuleItemInfo
           item0={process.env.PUBLIC_URL + this.props.item0}
           item0Name={this.state.item0}
+          item0Link={[`/items/${this.state.item0}`].join(" ")}
           item1={process.env.PUBLIC_URL + this.props.item1}
           item1Name={this.state.item1}
+          item1Link={[`/items/${this.state.item1}`].join(" ")}
           item2={process.env.PUBLIC_URL + this.props.item2}
           item2Name={this.state.item2}
+          item2Link={[`/items/${this.state.item2}`].join(" ")}
           item3={process.env.PUBLIC_URL + this.props.item3}
           item3Name={this.state.item3}
+          item3Link={[`/items/${this.state.item3}`].join(" ")}
           item4={process.env.PUBLIC_URL + this.props.item4}
           item4Name={this.state.item4}
+          item4Link={[`/items/${this.state.item4}`].join(" ")}
           item5={process.env.PUBLIC_URL + this.props.item5}
           item5Name={this.state.item5}
+          item5Link={[`/items/${this.state.item5}`].join(" ")}
           item6={process.env.PUBLIC_URL + this.props.item6}
           item6Name={this.state.item6}
+          item6Link={[`/items/${this.state.item6}`].join(" ")}
         />
         <GameModuleFullMatchInfo gameId={this.props.gameId} />
       </div>
