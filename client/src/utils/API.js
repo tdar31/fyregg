@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default {
-
   getUser: function(queryUser) {
     console.log("INSIDE API.JS", queryUser.region);
     return axios.get(
@@ -43,9 +42,11 @@ export default {
   },
   getRankedData: function(rData) {
     console.log("Inside getRankedData: ", rData);
-    return axios.put(
-      "/api/rankedData/" + rData.username, rData
-    );
+    return axios.put("/api/rankedData/" + rData.username, rData);
+  },
+  findByMatchId: function(matchData) {
+    console.log("Inside findByMatchId!!!!", matchData);
+    return axios.put("/api/match/" + matchData.matchData, matchData);
   },
   //
   //

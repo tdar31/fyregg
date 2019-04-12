@@ -18,7 +18,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/match/:id" component={Matchpage} />
+        <Route exact path="/match/:mId" component={Matchpage} />
         <Route exact path="/summoner/" component={Profilepage} />
         <Route
           exact

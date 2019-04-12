@@ -17,9 +17,30 @@ class MatchPage extends Component {
     let matchData = {
       //Need this inorder to reuse API route
       accountId: "dummyAcc",
-      matchData: this.props.match.params.id
+      matchData: this.props.match.params.mId
     };
 
+    API.findByMatchId(matchData).then(res =>
+      // console.log("findByMatchId =====> res.data: ", res.data[0])
+      res.data[0] != undefined
+        ? this.setState(
+            {
+              matchData: res.data[0].matchData
+            },
+            function ree() {
+              console.log("this.state post gameID DB payload: ", this.state);
+            }
+          )
+        : this.getMatchData(matchData)
+    );
+  }
+
+  //Checks DB for existing match data
+  //If it doesn't exist pings api for matchdata and populates page
+  //Once populated needs to save to db for later use
+
+  getMatchData = matchData => {
+    console.log("getMatchData if failed")
     API.getMatchData(matchData)
       .then(res => {
         this.setState(
@@ -32,12 +53,19 @@ class MatchPage extends Component {
         );
       })
       .catch(err => console.log(err));
-  }
+  };
 
-  componentDidMount() {
-    //makes API call to DB to check for matchID and see if it already is in the DB
-    //IF not make API call for matchtimeline for data
-  }
+  // //Creates new db Profile if user isn't in DB
+  // createMatch = () => {
+  //   let matchD = Object.assign({}, this.state.matchData);
+  //   let newMatchObj = {
+  //     matchData: matchD
+  //   };
+  //   API.createMatch({ newMatchObj }).then(res => {
+  //     // console.log("createMatch: ", res.data);
+  //     // this.getRankedData();
+  //   });
+  // };
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -70,7 +98,9 @@ class MatchPage extends Component {
       },
       function redirect() {
         // console.log("this.props.location: ", this.props.location)
-        this.props.history.replace("/summoner/" + this.state.queryUser + "/NA/");
+        this.props.history.replace(
+          "/summoner/" + this.state.queryUser + "/NA/"
+        );
       }
     );
   };
@@ -79,8 +109,8 @@ class MatchPage extends Component {
     return (
       <MatchContainer>
         <Nav
-          // onChange={this.handleInputChange}
-          // onClick={this.handleOnSubmit}
+        // onChange={this.handleInputChange}
+        // onClick={this.handleOnSubmit}
         />
         <MatchBody>
           <MatchOverviewInfo
