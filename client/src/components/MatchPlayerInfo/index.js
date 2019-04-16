@@ -152,7 +152,7 @@ class MatchPlayerInfo extends Component {
               participants: tempParticipantsArr
             },
             function() {
-              console.log("postUsernameUpdate: ", this.state.participants);
+              // console.log("postUsernameUpdate: ", this.state.participants);
               this.parseKDA();
             }
           );
@@ -208,7 +208,7 @@ class MatchPlayerInfo extends Component {
             participants: tempParticipantsArr
           },
           function() {
-            console.log("postUsernameUpdate2: ", this.state.participants);
+            // console.log("postUsernameUpdate2: ", this.state.participants);
             this.parseSummonerNamesOne();
           }
         );

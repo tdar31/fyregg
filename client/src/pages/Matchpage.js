@@ -20,6 +20,7 @@ class MatchPage extends Component {
       matchData: this.props.match.params.mId
     };
 
+    //Pings DB for match data before making API call
     API.findByMatchId(matchData).then(res =>
       // console.log("findByMatchId =====> res.data: ", res.data[0])
       res.data[0] != undefined
@@ -28,7 +29,10 @@ class MatchPage extends Component {
               matchData: res.data[0].matchData
             },
             function ree() {
-              console.log("this.state post gameID DB payload: ", this.state);
+              console.log(
+                "******this.state post gameID DB payload: ******",
+                this.state
+              );
             }
           )
         : this.getMatchData(matchData)
@@ -37,10 +41,10 @@ class MatchPage extends Component {
 
   //Checks DB for existing match data
   //If it doesn't exist pings api for matchdata and populates page
-  //Once populated needs to save to db for later use
+  //Once populated saves to db for later use
 
   getMatchData = matchData => {
-    console.log("getMatchData if failed")
+    console.log("getMatchData if failed");
     API.getMatchData(matchData)
       .then(res => {
         this.setState(
@@ -48,24 +52,23 @@ class MatchPage extends Component {
             matchData: res.data
           },
           function update() {
-            console.log("this.state.matchData: ", this.state.matchData);
+            this.createMatch();
           }
         );
       })
       .catch(err => console.log(err));
   };
 
-  // //Creates new db Profile if user isn't in DB
-  // createMatch = () => {
-  //   let matchD = Object.assign({}, this.state.matchData);
-  //   let newMatchObj = {
-  //     matchData: matchD
-  //   };
-  //   API.createMatch({ newMatchObj }).then(res => {
-  //     // console.log("createMatch: ", res.data);
-  //     // this.getRankedData();
-  //   });
-  // };
+  //Creates new db Profile if user isn't in DB
+  createMatch = () => {
+    let matchD = Object.assign({}, this.state.matchData);
+    let newMatchObj = {
+      profile: matchD
+    };
+    API.createMatch({ newMatchObj }).then(res => {
+      console.log("createMatch: ", res.data);
+    });
+  };
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -89,9 +92,6 @@ class MatchPage extends Component {
 
     //Take in
     let queryUser = this.state.inputValue.trim().toLowerCase();
-    // window.location =
-    //   "https://whispering-eyrie-27356.herokuapp.com/" + queryUser + "/NA";
-
     this.setState(
       {
         queryUser: queryUser
@@ -109,6 +109,8 @@ class MatchPage extends Component {
     return (
       <MatchContainer>
         <Nav
+        //Disabled for now since react router doesn't force rerender when route
+        //is still the same.  Look into this later since it's pretty easy to enable
         // onChange={this.handleInputChange}
         // onClick={this.handleOnSubmit}
         />

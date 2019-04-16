@@ -48,6 +48,10 @@ export default {
     console.log("Inside findByMatchId!!!!", matchData);
     return axios.put("/api/match/" + matchData.matchData, matchData);
   },
+  createMatch: function(newMatchObj) {
+    console.log("newMatchObj: ", newMatchObj)
+    return axios.post("/api/match/" + newMatchObj.gameId, newMatchObj)
+  },
   //
   //
   //

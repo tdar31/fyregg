@@ -4,7 +4,7 @@ console.log("INSIDE matchController ROUTES");
 
 router.route("/:id")
 .put(matchController.findByMatchId)
-// .post(matchController.createMatch)
+.post(matchController.createMatch)
 // .get(rankedDataController.saveMatchData)
 // .delete(rankedDataController.remove);
 
