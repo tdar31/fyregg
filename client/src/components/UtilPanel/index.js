@@ -17,7 +17,7 @@ function UtilPanel({
       >
         Update!
       </button>
-      <button className="button updateButton" onClick={onClickMore}>
+      <button className={["button updateButton", `is-${type}`, className].join(" ")} onClick={onClickMore}>
         Load More Matches!
       </button>
     </div>

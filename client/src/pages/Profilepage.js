@@ -12,7 +12,6 @@ import UserModule from "../components/UserModule";
 import UserNotFound from "../components/UserNotFound";
 import UtilPanel from "../components/UtilPanel";
 import { withRouter } from "react-router";
-// import Particles from "react-particles-js";
 
 class Profilepage extends Component {
   state = {
@@ -30,12 +29,6 @@ class Profilepage extends Component {
     queryUser: ""
     // selectedButton: null,
   };
-
-  componentWillMount() {
-    //Checks if user is in DB first before hitting API
-    //If found populates page with cached DB data for rate limiting
-    //If not it calls getUser which hits riot API
-  }
 
   componentDidMount() {
     //Binds this for button selection
@@ -89,7 +82,7 @@ class Profilepage extends Component {
 
   //UPDATES UI IF SUMMONER ISN'T FOUND BY RIOT API
   summonerNotFound = () => {
-    console.log("SUMMONER NOT FOUND !");
+    // console.log("SUMMONER NOT FOUND !");
     this.setState({
       error: true
     });
@@ -161,8 +154,8 @@ class Profilepage extends Component {
       }
 
       // Updates position type
-      //**Leaving this for now even though its commented out.  Need to figure out what "APEX" is as Top and
-      //mid laners can be both APEX and doesn't seem to be a way to figure out
+        //**Leaving this for now even though its commented out.  Need to figure out what "APEX" is as Top and
+        //mid laners can be both APEX and doesn't seem to be a way to figure out which is which
       //the difference between them**
       // if (playerRanked.position === "TOP") {
       //   playerRanked.position = "Top";
@@ -231,7 +224,7 @@ class Profilepage extends Component {
       }
 
       this.state.rankedStats[i] = playerRanked;
-      console.log("POST: ", this.state.rankedStats[i]);
+      // console.log("POST: ", this.state.rankedStats[i]);
     }
     this.getMatchHistory();
   };
@@ -292,10 +285,10 @@ class Profilepage extends Component {
             };
           },
           function onceStateUpdated() {
-            console.log(
-              "this.state.matchData.length: ",
-              this.state.matchData.length
-            );
+            // console.log(
+            //   "this.state.matchData.length: ",
+            //   this.state.matchData.length
+            // );
             if (+this.state.matchData.length === +this.state.iterations) {
               this.findPlayerMatchStats();
             }
@@ -359,10 +352,10 @@ class Profilepage extends Component {
                   };
                 },
                 function onceStateUpdated() {
-                  console.log(
-                    "this.state.selectedPlayerData: ",
-                    this.saveMatchData()
-                  );
+                  // console.log(
+                  //   "this.state.selectedPlayerData: ",
+                  //   this.saveMatchData()
+                  // );
                 }
               );
             }
@@ -393,7 +386,7 @@ class Profilepage extends Component {
 
   setSelectedButton(id) {
     this.setState({ selectedButton: id }, function() {
-      console.log("selectedBTN: ", this.state.selectedButton);
+      // console.log("selectedBTN: ", this.state.selectedButton);
     });
   }
 
@@ -413,14 +406,15 @@ class Profilepage extends Component {
 
   handleOnLoadMoreClick = event => {
     event.preventDefault();
-    console.log("LoadMore Button Clicked");
+    // console.log("LoadMore Button Clicked");
     let iter = this.state.iterations + 5;
     this.setState(
       {
-        iterations: iter
+        iterations: iter,
+        loadingStatus: "loading"
       },
       function resetLoading() {
-        console.log("this.state.iterations: ", this.state.iterations);
+        // console.log("this.state.iterations: ", this.state.iterations);
         this.triggerUpdateClick();
         this.triggerLoader();
       }
