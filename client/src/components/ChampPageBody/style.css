@@ -1,14 +1,10 @@
 .bioCover {
-  height: 750px;
+  height: 500px;
   width: 1000px;
-  background: -moz-linear-gradient(
-    bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgb(187, 91, 91) 30%
-  );
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgb(94, 94, 94);
   z-index: 20;
   position: fixed;
-  /* background-image: url("../../assets/backgrounds/noisy_net.png"); */
 }
 
 .classWrapper {
@@ -17,7 +13,6 @@
 }
 
 .champSplash {
-  /* border-bottom: 10px solid whitesmoke; */
   position: fixed;
   width: 800px;
   height: auto;
@@ -33,7 +28,8 @@
   z-index: 30;
   margin-top: 320px;
   margin-left: 180px;
-  background-color: rgb(94, 94, 94);
+  background-color: rgb(139, 139, 139);
+  border: 1px solid #333333;
   padding: 20px;
   border-radius: 10px;
   font-size: 24px;

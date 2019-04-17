@@ -1,16 +1,12 @@
 .bioBody {
-  /* height: 1000px; */
-  /* width: 800px; */
   margin-right: 100px;
   margin-left: 100px;
   padding-bottom: 50px;
   margin-bottom: 20px;
   background-color: rgb(110, 110, 110);
-  margin-top: 170px;
   z-index: 2;
   position: relative;
   border-radius: 10px 150px 10px 10px;
-  /* border-radius: 10px; */
 }
 
 .champLore {
