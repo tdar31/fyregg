@@ -50,7 +50,7 @@ class Profilepage extends Component {
               rankedStats: res.data[0].rankedStats
             },
             function ree() {
-              console.log("this.state post DB payload: ", this.state);
+              // console.log("this.state post DB payload: ", this.state);
             }
           )
         : this.getUser(queryUser)
@@ -64,7 +64,7 @@ class Profilepage extends Component {
     //   username: this.props.match.params.username.toLowerCase(),
     //   region: this.props.match.params.region.toLowerCase()
     // };
-    console.log("GETUSER ", queryUser);
+    // console.log("GETUSER ", queryUser);
     // console.log("Submit button clicked-> queryUser: ", queryUser);
     API.getUser(queryUser)
       .then(

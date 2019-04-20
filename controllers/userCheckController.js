@@ -3,7 +3,7 @@ var axios = require("axios");
 
 module.exports = {
   findByUsername: function(req, res) {
-    console.log("findbyusername -> req.body: ", req.body)
+    // console.log("findbyusername -> req.body: ", req.body)
     db.Profile.find({
         'profile.dbUsername': req.body.username
     })

@@ -3,7 +3,7 @@ var axios = require("axios");
 
 module.exports = {
   findByMatchId: function(req, res) {
-    console.log("findBMID backend", req.body);
+    // console.log("findBMID backend", req.body);
     db.Profile.find({
       "profile.matchData.gameId": req.body.matchData
     })

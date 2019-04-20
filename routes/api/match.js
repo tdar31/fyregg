@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const matchController = require("../../controllers/matchController");
-console.log("INSIDE matchController ROUTES");
+// console.log("INSIDE matchController ROUTES");
 
 router.route("/:id")
 .put(matchController.findByMatchId)

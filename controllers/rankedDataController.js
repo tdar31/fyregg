@@ -3,7 +3,7 @@ var axios = require("axios");
 
 module.exports = {
   getRankedData: function(req, res) {
-    console.log("GET getRankedData // req.body: ", req.body);
+    // console.log("GET getRankedData // req.body: ", req.body);
     axios
       .get(
         "https://na1.api.riotgames.com/lol/league/v4/positions/by-summoner/" +

@@ -8,7 +8,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   saveMatchData: function(req, res) {
-    console.log("saveMatchData -> req.body: ", req.body.profile)
+    // console.log("saveMatchData -> req.body: ", req.body.profile)
     db.Profile.findOneAndUpdate(
       { 'profile.accountId': req.body.profile.accountId}, req.body
     )
