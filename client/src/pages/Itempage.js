@@ -46,7 +46,7 @@ class Itempage extends Component {
     //Finds all items and pairs them with their ID in an array of objects for parsing through
     //For-in loop since json data provided by Riot is a single nested object
     for (var key in itemJsonData.data) {
-      console.log("this.state.pageId: ", this.state.pageId);
+      // console.log("this.state.pageId: ", this.state.pageId);
       let itemKeysName = itemJsonData.data[key].name;
       console.log(itemKeysName)
       if (this.state.pageId === itemKeysName) {
@@ -56,7 +56,7 @@ class Itempage extends Component {
             itemDesc: itemJsonData.data[key].plaintext
           },
           function update() {
-            console.log("this.state: ", this.state);
+            // console.log("this.state: ", this.state);
           }
         );
       }

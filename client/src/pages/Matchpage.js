@@ -29,10 +29,10 @@ class MatchPage extends Component {
               matchData: res.data[0].matchData
             },
             function ree() {
-              console.log(
-                "******this.state post gameID DB payload: ******",
-                this.state
-              );
+              // console.log(
+              //   "******this.state post gameID DB payload: ******",
+              //   this.state
+              // );
             }
           )
         : this.getMatchData(matchData)
@@ -44,7 +44,7 @@ class MatchPage extends Component {
   //Once populated saves to db for later use
 
   getMatchData = matchData => {
-    console.log("getMatchData if failed");
+    // console.log("getMatchData if failed");
     API.getMatchData(matchData)
       .then(res => {
         this.setState(
@@ -66,7 +66,7 @@ class MatchPage extends Component {
       profile: matchD
     };
     API.createMatch({ newMatchObj }).then(res => {
-      console.log("createMatch: ", res.data);
+      // console.log("createMatch: ", res.data);
     });
   };
 

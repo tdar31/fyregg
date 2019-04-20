@@ -51,7 +51,7 @@ class ChampionPage extends Component {
             spellDesc: summonerJsonData.data[key].description
           },
           function update() {
-            console.log("this.state: ", this.state);
+            // console.log("this.state: ", this.state);
           }
         );
       }

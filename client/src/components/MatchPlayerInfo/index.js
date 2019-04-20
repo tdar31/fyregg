@@ -40,7 +40,7 @@ class MatchPlayerInfo extends Component {
     }
 
     //Swaps ID of champ to their name
-    //For-in loop since json data provided by Riot is a single nested object
+    //For-in loop since json data provided by Riot is a single nested object instead of an array :(
     for (var key in champJsonData.keys) {
       // console.log(key);
       let champKeysArr = champJsonData.keys[key];
@@ -131,7 +131,7 @@ class MatchPlayerInfo extends Component {
   };
 
   parseUsername = () => {
-    console.log(this.state.participantIdentities[0]);
+    // console.log(this.state.participantIdentities[0]);
     let tempParticipantsArr = [];
     for (let i = 0; i < this.state.participants.length; i++) {
       for (let j = 0; j < this.state.participantIdentities.length; j++) {
@@ -267,7 +267,7 @@ class MatchPlayerInfo extends Component {
                 participants: tempParticipantsArr
               },
               function() {
-                console.log("postSumNamesUpdate: ", this.state.participants);
+                // console.log("postSumNamesUpdate: ", this.state.participants);
               }
             );
           }

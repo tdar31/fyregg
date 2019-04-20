@@ -140,7 +140,7 @@ class MatchOverviewInfo extends Component {
               gameDuration: gD
             },
             function() {
-              console.log("MatchOverviewInfo POST: ", this.state);
+              // console.log("MatchOverviewInfo POST: ", this.state);
             }
           );
         }

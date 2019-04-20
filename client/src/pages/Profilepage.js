@@ -392,7 +392,7 @@ class Profilepage extends Component {
 
   handleOnUpdateClick = event => {
     event.preventDefault();
-    console.log("Update Button Clicked");
+    // console.log("Update Button Clicked");
     this.setState(
       {
         loadingStatus: "loading"
