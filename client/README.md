@@ -1,6 +1,5 @@
 Plans 
 
-- Make it NA only to start
-- Swap to ?=QUERY
+- Add more regions
+- Swap to ?=QUERY instead of current format
 - Build out Champion, Item and Spells stuff
-- AWS Deployment
