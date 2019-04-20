@@ -40,7 +40,7 @@ class Profilepage extends Component {
     };
 
     API.findByUsername(queryUser).then(res =>
-      // console.log("findByUsername =====> res.data: ", res.data[0])
+      // console.log("findByUsername =====> res.data: ", res.data[0].profile)
       res.data[0] != undefined
         ? this.setState(
             {
@@ -50,7 +50,7 @@ class Profilepage extends Component {
               rankedStats: res.data[0].rankedStats
             },
             function ree() {
-              // console.log("this.state post DB payload: ", this.state);
+              console.log("this.state post DB payload: ", this.state);
             }
           )
         : this.getUser(queryUser)
@@ -91,7 +91,7 @@ class Profilepage extends Component {
   //Sent all usernames to lowercase with no spaces
   //used only for DB so that search for cached user data is easier
   correctUsername = profileData => {
-    // console.log("profileData: ", profileData)
+    console.log("profileData: ", profileData)
     let newProfile = Object.assign({}, profileData);
     newProfile.dbUsername = profileData.name
       .toLowerCase()
@@ -134,7 +134,7 @@ class Profilepage extends Component {
         this.setState({ rankedStats: res.data }, function onceStateUpdated() {
           // console.log("this.state.rankedStats: ", this.state.rankedStats);
           this.parseRankedData();
-          // this.getMatchHistory();
+          this.getMatchHistory();
         });
       })
       .catch(err => console.log(err));
@@ -354,7 +354,7 @@ class Profilepage extends Component {
                 function onceStateUpdated() {
                   // console.log(
                   //   "this.state.selectedPlayerData: ",
-                  //   this.saveMatchData()
+                    this.saveMatchData()
                   // );
                 }
               );
