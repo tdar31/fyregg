@@ -30,6 +30,12 @@ class Profilepage extends Component {
     // selectedButton: null,
   };
 
+  componentWillMount() {
+    //Checks if user is in DB first before hitting API
+    //If found populates page with cached DB data for rate limiting
+    //If not it calls getUser which hits riot API
+  }
+
   componentDidMount() {
     //Binds this for button selection
     // this.setSelectedButton = this.setSelectedButton.bind(this);
@@ -40,7 +46,7 @@ class Profilepage extends Component {
     };
 
     API.findByUsername(queryUser).then(res =>
-      // console.log("findByUsername =====> res.data: ", res.data[0].profile)
+      // console.log("findByUsername =====> res.data: ", res.data[0])
       res.data[0] != undefined
         ? this.setState(
             {
@@ -64,7 +70,7 @@ class Profilepage extends Component {
     //   username: this.props.match.params.username.toLowerCase(),
     //   region: this.props.match.params.region.toLowerCase()
     // };
-    // console.log("GETUSER ", queryUser);
+    console.log("GETUSER ", queryUser);
     // console.log("Submit button clicked-> queryUser: ", queryUser);
     API.getUser(queryUser)
       .then(
@@ -91,7 +97,7 @@ class Profilepage extends Component {
   //Sent all usernames to lowercase with no spaces
   //used only for DB so that search for cached user data is easier
   correctUsername = profileData => {
-    console.log("profileData: ", profileData)
+    // console.log("profileData: ", profileData)
     let newProfile = Object.assign({}, profileData);
     newProfile.dbUsername = profileData.name
       .toLowerCase()
@@ -134,7 +140,7 @@ class Profilepage extends Component {
         this.setState({ rankedStats: res.data }, function onceStateUpdated() {
           // console.log("this.state.rankedStats: ", this.state.rankedStats);
           this.parseRankedData();
-          this.getMatchHistory();
+          // this.getMatchHistory();
         });
       })
       .catch(err => console.log(err));
@@ -154,8 +160,8 @@ class Profilepage extends Component {
       }
 
       // Updates position type
-        //**Leaving this for now even though its commented out.  Need to figure out what "APEX" is as Top and
-        //mid laners can be both APEX and doesn't seem to be a way to figure out which is which
+      //**Leaving this for now even though its commented out.  Need to figure out what "APEX" is as Top and
+      //mid laners can be both APEX and doesn't seem to be a way to figure out
       //the difference between them**
       // if (playerRanked.position === "TOP") {
       //   playerRanked.position = "Top";
@@ -224,7 +230,7 @@ class Profilepage extends Component {
       }
 
       this.state.rankedStats[i] = playerRanked;
-      // console.log("POST: ", this.state.rankedStats[i]);
+      console.log("POST: ", this.state.rankedStats[i]);
     }
     this.getMatchHistory();
   };
@@ -285,10 +291,10 @@ class Profilepage extends Component {
             };
           },
           function onceStateUpdated() {
-            // console.log(
-            //   "this.state.matchData.length: ",
-            //   this.state.matchData.length
-            // );
+            console.log(
+              "this.state.matchData.length: ",
+              this.state.matchData.length
+            );
             if (+this.state.matchData.length === +this.state.iterations) {
               this.findPlayerMatchStats();
             }
@@ -352,9 +358,10 @@ class Profilepage extends Component {
                   };
                 },
                 function onceStateUpdated() {
+                  this.saveMatchData()
                   // console.log(
                   //   "this.state.selectedPlayerData: ",
-                    this.saveMatchData()
+                    
                   // );
                 }
               );
@@ -386,13 +393,13 @@ class Profilepage extends Component {
 
   setSelectedButton(id) {
     this.setState({ selectedButton: id }, function() {
-      // console.log("selectedBTN: ", this.state.selectedButton);
+      console.log("selectedBTN: ", this.state.selectedButton);
     });
   }
 
   handleOnUpdateClick = event => {
     event.preventDefault();
-    // console.log("Update Button Clicked");
+    console.log("Update Button Clicked");
     this.setState(
       {
         loadingStatus: "loading"
@@ -406,7 +413,7 @@ class Profilepage extends Component {
 
   handleOnLoadMoreClick = event => {
     event.preventDefault();
-    // console.log("LoadMore Button Clicked");
+    console.log("LoadMore Button Clicked");
     let iter = this.state.iterations + 5;
     this.setState(
       {
@@ -508,8 +515,8 @@ class Profilepage extends Component {
       <div>
         <ProfileContainer className={this.state.theme}>
           <Nav
-            // onChange={this.handleInputChange}
-            // onClick={this.handleOnSubmit}
+          // onChange={this.handleInputChange}
+          // onClick={this.handleOnSubmit}
           />
           <ProfileBody>
             <UserNotFound />
@@ -521,8 +528,8 @@ class Profilepage extends Component {
       <div>
         <ProfileContainer className={this.state.theme}>
           <Nav
-            // onChange={this.handleInputChange}
-            // onClick={this.handleOnSubmit}
+          // onChange={this.handleInputChange}
+          // onClick={this.handleOnSubmit}
           />
           <ProfileBody>
             <UserBanner>
@@ -635,7 +642,6 @@ class Profilepage extends Component {
                     perkSubStyleRawId={playerData.stats.perkSubStyle}
                     totalMinionsKilled={playerData.stats.totalMinionsKilled}
                     neutralMinionsKilled={playerData.stats.neutralMinionsKilled}
-                    
                   />
                 ))}
               </GameContainer>
