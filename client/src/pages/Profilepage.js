@@ -131,6 +131,7 @@ class Profilepage extends Component {
   //Get rankedData for summoner
   //will return empty array if summoner has never queued ranked
   getRankedData = () => {
+    console.log("Start of getRankedData")
     let rData = {
       username: this.state.profile.id,
       region: "NA"
@@ -138,7 +139,7 @@ class Profilepage extends Component {
     API.getRankedData(rData)
       .then(res => {
         this.setState({ rankedStats: res.data }, function onceStateUpdated() {
-          // console.log("this.state.rankedStats: ", this.state.rankedStats);
+          console.log("this.state.rankedStats: ", this.state.rankedStats);
           this.parseRankedData();
           // this.getMatchHistory();
         });
