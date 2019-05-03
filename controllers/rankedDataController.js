@@ -12,8 +12,6 @@ module.exports = {
           process.env.RITOAPIKEY
       )
       .then(res => {
-        // let json = stringify(res.data);
-        // console.log(json)
         return res.data;
       })
       .then(dbModel => res.json(dbModel))

@@ -27,14 +27,7 @@ class Profilepage extends Component {
     loadingStatus: "active",
     error: false,
     queryUser: ""
-    // selectedButton: null,
   };
-
-  componentWillMount() {
-    //Checks if user is in DB first before hitting API
-    //If found populates page with cached DB data for rate limiting
-    //If not it calls getUser which hits riot API
-  }
 
   componentDidMount() {
     //Binds this for button selection
