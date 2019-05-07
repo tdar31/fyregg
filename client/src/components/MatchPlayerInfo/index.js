@@ -283,7 +283,7 @@ class MatchPlayerInfo extends Component {
           <MatchPlayerPanel
             key={index}
             win={partData.win}
-            championId={[`/images/tiles/${partData.championId}.jpg`].join(" ")}
+            championId={[`http://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${partData.championName}_0.jpg`].join(" ")}
             championName={partData.championName}
             playerLevel={partData.stats.champLevel}
             playerUsername={partData.participantId}

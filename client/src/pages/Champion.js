@@ -67,7 +67,7 @@ class Champion extends Component {
               <ChampItem
                 key={index}
                 championIdRAW={champData.name.toString()}
-                championId={[`/images/tiles/${champData.id}.jpg`].join(" ")}
+                championId={[`http://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${champData.name.toString()}_0.jpg`].join(" ")}
                 linkToPage={[`/champions/${champData.name.toString()}`].join(" ")}
               />
             ))}

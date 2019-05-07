@@ -14,7 +14,7 @@ function NoMatch() {
             <article className="media">
               <div className="media-content userNotFoundContent">
                 <p className="userNotFoundText">
-                  404 page not found D:
+                  404 page not found D: 
                   <br />
                 </p>
                 <img className="notFoundIMG" src="/images/splash/Amumu_8.jpg" />

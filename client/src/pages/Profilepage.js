@@ -48,7 +48,7 @@ class Profilepage extends Component {
                           selectedPlayerData: res.data[0].selectedPlayerData,
                           rankedStats: res.data[0].rankedStats
                       },
-                      function ree() {
+                      function Updated() {
                           console.log(
                               "this.state post DB payload: ",
                               this.state
@@ -230,7 +230,7 @@ class Profilepage extends Component {
             }
 
             this.state.rankedStats[i] = playerRanked;
-            console.log("POST: ", this.state.rankedStats[i]);
+            // console.log("POST: ", this.state.rankedStats[i]);
         }
         this.getMatchHistory();
     };
@@ -312,8 +312,9 @@ class Profilepage extends Component {
         //3x nested loop that looks through all return match data searching for participantIdentites where
         //the player's id matches the queried players account id then pushing those stats to
         //a new array for rendering in gameItems component in profile page
+        //
         //Another function on the list that definitely will revisit in terms of
-        //refactoring but leaving for now since it works
+        //!!Needs to be refactored due to absurd techinical debt but leaving for now since it works
 
         //This iterates through all the matchData games returned by API which is now saved to the state
         for (let h = 0; h < this.state.matchData.length; h++) {
@@ -373,7 +374,8 @@ class Profilepage extends Component {
                                     };
                                 },
                                 function onceStateUpdated() {
-                                    this.saveMatchData();
+                                    // this.saveMatchData();
+                                    this.parseEmpty();
                                     // console.log(
                                     //   "this.state.selectedPlayerData: ",
 
@@ -388,6 +390,57 @@ class Profilepage extends Component {
         // console.log("end of findPlayerMatchStats", this.state.selectedPlayerData);
     };
 
+    parseEmpty = () => {
+        //Needed due to the swap over the Data Dragon CDN
+        //No longer have blank placeholder as the 0 value
+        //Using 3637 as default but have to parse this out before
+        //I cache to DB
+
+        let playData = Object.assign({}, this.state);
+
+        let statsArr = playData.selectedPlayerData;
+        console.log("stateArr: ", statsArr);
+
+        for (let i = 0; i < statsArr.length; i++) {
+            if (statsArr[i].stats.item0 == 0) {
+                statsArr[i].stats.item0 = 3637;
+            }
+
+            if (statsArr[i].stats.item1 == 0) {
+                statsArr[i].stats.item1 = 3637;
+            }
+
+            if (statsArr[i].stats.item2 == 0) {
+                statsArr[i].stats.item2 = 3637;
+            }
+
+            if (statsArr[i].stats.item3 == 0) {
+                statsArr[i].stats.item3 = 3637;
+            }
+
+            if (statsArr[i].stats.item4 == 0) {
+                statsArr[i].stats.item4 = 3637;
+            }
+
+            if (statsArr[i].stats.item5 == 0) {
+                statsArr[i].stats.item5 = 3637;
+            }
+
+            if (statsArr[i].stats.item6 == 0) {
+                statsArr[i].stats.item6 = 3637;
+            }
+        }
+
+        this.setState(
+            {
+                state: playData
+            },
+            function() {
+                this.saveMatchData();
+            }
+        );
+    };
+
     saveMatchData = () => {
         let mData = Object.assign({}, this.state);
         // mData.selectedPlayerData = [];
@@ -400,12 +453,6 @@ class Profilepage extends Component {
         API.saveMatchData(mData).then(console.log("Postsave: ", this.state));
     };
 
-    toggle = () => {
-        this.setState(prevState => ({
-            modal: !prevState.modal
-        }));
-    };
-
     setSelectedButton(id) {
         this.setState({ selectedButton: id }, function() {
             console.log("selectedBTN: ", this.state.selectedButton);
@@ -414,7 +461,7 @@ class Profilepage extends Component {
 
     handleOnUpdateClick = event => {
         event.preventDefault();
-        console.log("Update Button Clicked");
+        // console.log("Update Button Clicked");
         this.setState(
             {
                 loadingStatus: "loading"
@@ -428,7 +475,7 @@ class Profilepage extends Component {
 
     handleOnLoadMoreClick = event => {
         event.preventDefault();
-        console.log("LoadMore Button Clicked");
+        // console.log("LoadMore Button Clicked");
         let iter = this.state.iterations + 5;
         this.setState(
             {
@@ -553,7 +600,6 @@ class Profilepage extends Component {
                                 level={this.state.profile.summonerLevel}
                                 region={this.props.match.params.region}
                                 profileIcon={[
-                                    // `/images/profileicon/${this.state.profile.profileIconId}.png`
                                     `http://ddragon.leagueoflegends.com/cdn/9.9.1/img/profileicon/${
                                         this.state.profile.profileIconId
                                     }.png`
@@ -610,11 +656,11 @@ class Profilepage extends Component {
                                                 `/match/${playerData.gameId}`
                                             ].join(" ")}
                                             championIdRAW={playerData.championId.toString()}
-                                            championId={[
-                                                `/images/tiles/${
-                                                    playerData.championId
-                                                }.jpg`
-                                            ].join(" ")}
+                                            // championId={[
+                                            //     `/images/tiles/${
+                                            //         playerData.championId
+                                            //     }.jpg`
+                                            // ].join(" ")}
                                             spell1Id={[
                                                 `/images/summonerspell/${
                                                     playerData.spell1Id

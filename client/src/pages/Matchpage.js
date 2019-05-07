@@ -29,10 +29,10 @@ class MatchPage extends Component {
               matchData: res.data[0].matchData
             },
             function ree() {
-              // console.log(
-              //   "******this.state post gameID DB payload: ******",
-              //   this.state
-              // );
+              console.log(
+                "******this.state post gameID DB payload: ******",
+                this.state
+              );
             }
           )
         : this.getMatchData(matchData)

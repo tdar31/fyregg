@@ -364,6 +364,7 @@ class GameItem extends Component {
         <GameModuleChampInfo
           champName={this.state.champName}
           champIcon={process.env.PUBLIC_URL + this.props.championId}
+          champIcon={[`http://ddragon.leagueoflegends.com/cdn/img/champion/tiles/${this.state.champName}_0.jpg`]}
           spell1={process.env.PUBLIC_URL + this.props.spell1Id}
           spell1Name={this.state.spell1}
           spell2={process.env.PUBLIC_URL + this.props.spell2Id}

@@ -55,7 +55,9 @@ class ChampionPage extends Component {
     window.scrollTo(0, 0);
     for (var name in champJsonData.data) {
       let champKeysArr = champJsonData.data[name];
-      if (this.state.championName === champKeysArr.name) {
+      console.log("champKeysArr: ", champKeysArr.id)
+      console.log("this.state.championName: ", this.state.championName)
+      if (this.state.championName == champKeysArr.id) {
         this.setState(
           {
             championData: champKeysArr,
@@ -95,7 +97,8 @@ class ChampionPage extends Component {
           <ChampionBody>
             <ChampPageBody
               championImage={[
-                `/images/splash/${this.state.championNameId}_0.jpg`
+                // `/images/splash/${this.state.championNameId}_0.jpg`
+                `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.state.championName}_0.jpg`
               ].join(" ")}
               championName={this.state.championName}
               championTitle={this.state.championTitle}
