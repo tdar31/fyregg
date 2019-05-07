@@ -310,13 +310,13 @@ class MatchPlayerInfo extends Component {
             perkSubStyle={[
               `/images/perk-images/Styles/${partData.stats.perkSubStyle}.png`
             ].join(" ")}
-            item0={[`/images/item/${partData.stats.item0}.png`].join(" ")}
-            item1={[`/images/item/${partData.stats.item1}.png`].join(" ")}
-            item2={[`/images/item/${partData.stats.item2}.png`].join(" ")}
-            item3={[`/images/item/${partData.stats.item3}.png`].join(" ")}
-            item4={[`/images/item/${partData.stats.item4}.png`].join(" ")}
-            item5={[`/images/item/${partData.stats.item5}.png`].join(" ")}
-            item6={[`/images/item/${partData.stats.item6}.png`].join(" ")}
+            item0={[`http://ddragon.leagueoflegends.com/cdn/9.9.1/img/item/${partData.stats.item0}.png`].join(" ")}
+            item1={[`http://ddragon.leagueoflegends.com/cdn/9.9.1/img/item/${partData.stats.item1}.png`].join(" ")}
+            item2={[`http://ddragon.leagueoflegends.com/cdn/9.9.1/img/item/${partData.stats.item2}.png`].join(" ")}
+            item3={[`http://ddragon.leagueoflegends.com/cdn/9.9.1/img/item/${partData.stats.item3}.png`].join(" ")}
+            item4={[`http://ddragon.leagueoflegends.com/cdn/9.9.1/img/item/${partData.stats.item4}.png`].join(" ")}
+            item5={[`http://ddragon.leagueoflegends.com/cdn/9.9.1/img/item/${partData.stats.item5}.png`].join(" ")}
+            item6={[`http://ddragon.leagueoflegends.com/cdn/9.9.1/img/item/${partData.stats.item6}.png`].join(" ")}
           />
         ))}
       </div>
