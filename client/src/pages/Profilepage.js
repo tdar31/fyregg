@@ -49,9 +49,51 @@ class Profilepage extends Component {
                           rankedStats: res.data[0].rankedStats
                       },
                       function Updated() {
-                          console.log(
-                              "this.state post DB payload: ",
-                              this.state
+                          //Hacky workaround needed due to swapping over to Data Dragon
+                          //Items with 0 ID don't appear but thats the default value returned by API
+                          //Better way to do this but going with this for now so at least it "works"
+                          let playData = Object.assign({}, this.state);
+
+                          let statsArr = playData.selectedPlayerData;
+                          console.log("stateArr: ", statsArr);
+
+                          for (let i = 0; i < statsArr.length; i++) {
+                              if (statsArr[i].stats.item0 == 0) {
+                                  statsArr[i].stats.item0 = 3637;
+                              }
+
+                              if (statsArr[i].stats.item1 == 0) {
+                                  statsArr[i].stats.item1 = 3637;
+                              }
+
+                              if (statsArr[i].stats.item2 == 0) {
+                                  statsArr[i].stats.item2 = 3637;
+                              }
+
+                              if (statsArr[i].stats.item3 == 0) {
+                                  statsArr[i].stats.item3 = 3637;
+                              }
+
+                              if (statsArr[i].stats.item4 == 0) {
+                                  statsArr[i].stats.item4 = 3637;
+                              }
+
+                              if (statsArr[i].stats.item5 == 0) {
+                                  statsArr[i].stats.item5 = 3637;
+                              }
+
+                              if (statsArr[i].stats.item6 == 0) {
+                                  statsArr[i].stats.item6 = 3637;
+                              }
+                          }
+
+                          this.setState(
+                              {
+                                  state: playData
+                              },
+                              function() {
+                                  console.log("THIS>STATEW: ", this.state);
+                              }
                           );
                       }
                   )
