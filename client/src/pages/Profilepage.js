@@ -30,8 +30,6 @@ class Profilepage extends Component {
     };
 
     componentDidMount() {
-        //Binds this for button selection
-        // this.setSelectedButton = this.setSelectedButton.bind(this);
         //Get Player Data
         let queryUser = {
             username: this.props.match.params.username.toLowerCase(),
