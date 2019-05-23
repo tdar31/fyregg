@@ -414,8 +414,8 @@ class Profilepage extends Component {
                                     };
                                 },
                                 function onceStateUpdated() {
-                                    // this.saveMatchData();
-                                    this.parseEmpty();
+                                    this.saveMatchData();
+                                    // this.parseEmpty();
                                     // console.log(
                                     //   "this.state.selectedPlayerData: ",
 
@@ -476,6 +476,7 @@ class Profilepage extends Component {
                 state: playData
             },
             function() {
+                console.log("SAVEMATCHDATA")
                 this.saveMatchData();
             }
         );
