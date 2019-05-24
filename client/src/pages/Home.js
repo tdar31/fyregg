@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as withRouter, Router, Link } from "react-router-dom";
+import ReactRotatingText from "react-rotating-text";
 // import {
 //   NotificationContainer,
 //   NotificationManager
@@ -118,7 +119,12 @@ class Home extends Component {
                     </div>
                     <Banner />
                     <p className="suggest">
-                        <i>Try Meteos, Goldenglue or Doublelift</i>
+                        <i>
+                            Try searching{" "}
+                            <ReactRotatingText
+                                items={["Meteos", "Goldenglue", "Doublelift"]}
+                            />
+                        </i>
                     </p>
 
                     {/* <ul>
