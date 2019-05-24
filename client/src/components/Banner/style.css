@@ -1,26 +1,20 @@
 /* @import url("https://fonts.googleapis.com/css?family=Press+Start+2P"); */
 
-@font-face {
-  font-family: "Press Start 2P";
-  src: url(../../assets/fonts/PressStart2P/PressStart2P-Regular.ttf)
-    format("truetype");
-}
-
 .dot,
 .bannerTxt,
 .textContainer {
-  font-family: "Press Start 2P";
+    font-family: "Press Start 2P", sans-serif;
 }
 
 .dot {
-  color: #701313;
+    color: #701313;
 }
 
 .bannerTxt {
-  color: #701313;
+    color: #701313;
 }
 
 .textContainer {
-  margin-top: 15vh;
-  font-size: 100px !important;
+    margin-top: 15vh;
+    font-size: 100px !important;
 }
