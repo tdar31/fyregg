@@ -17,7 +17,7 @@ function NoMatch() {
                   404 page not found D: 
                   <br />
                 </p>
-                <img className="notFoundIMG" src="/images/splash/Amumu_8.jpg" />
+                <img className="notFoundIMG" src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_8.jpg" />
                 <img />
               </div>
             </article>

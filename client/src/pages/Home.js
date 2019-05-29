@@ -122,7 +122,7 @@ class Home extends Component {
                         <i>
                             Try searching{" "}
                             <ReactRotatingText
-                                items={["Meteos", "Goldenglue", "Doublelift"]}
+                                items={["TFblade", "Doublelift", "Goldenglue"]}
                             />
                         </i>
                     </p>
