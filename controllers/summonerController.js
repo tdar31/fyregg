@@ -1,6 +1,5 @@
 // const db = require("../models");
 var axios = require("axios");
-// const { parse, stringify } = require("flatted/cjs");
 
 module.exports = {
   findAll: function(req, res) {
