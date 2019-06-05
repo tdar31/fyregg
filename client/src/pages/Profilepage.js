@@ -560,57 +560,6 @@ class Profilepage extends Component {
         );
     };
 
-    //https://github.com/ReactTraining/react-router/issues/1694
-    //https://stackoverflow.com/questions/32261441/component-does-not-remount-when-route-parameters-change
-    //https://medium.freecodecamp.org/hitchhikers-guide-to-react-router-v4-4b12e369d10
-    //https://github.com/ReactTraining/history#properties
-    //
-
-    // handleInputChange = event => {
-    //   // Getting the value and name of the input which triggered the change
-    //   const { value } = event.target;
-
-    //   let typedValue = value.split(" ").join("");
-    //   // Updating the input's state
-    //   this.setState(
-    //     {
-    //       inputValue: typedValue
-    //     },
-    //     function onceStateUpdated() {
-    //       // console.log("this.state.inputValue: ", this.state.inputValue);
-    //     }
-    //   );
-    // };
-
-    // handleOnSubmit = event => {
-    //   // console.log("Submit button clicked");
-    //   event.preventDefault();
-
-    //   //Take in
-    //   let queryUser = this.state.inputValue.trim().toLowerCase();
-
-    //   this.setState(
-    //     {
-    //       queryUser: queryUser
-    //     },
-    //     function redirect() {
-    //       // console.log("handleOnSubmit");
-
-    //       this.props.history.push("/summoner/" + this.state.queryUser + "/NA/");
-    //       // let ree = "/summoner/" + this.state.queryUser + "/NA/";
-
-    //       // this.props.history.push({
-    //       //   pathname: ree,
-    //       //   key: this.props.location.key
-    //       // });
-
-    //       // window.location.assign("summoner/" + queryUser + "/NA/");
-    //     }
-    //   );
-
-    //   // window.location.assign("summoner/" + queryUser + "/NA/");
-    // };
-
     render() {
         return this.state.error ? (
             //THIS IS FOR IF RIOT API CANT FIND SUMMONER NAME
