@@ -270,7 +270,7 @@ class Profilepage extends Component {
             }
 
             this.state.rankedStats[i] = playerRanked;
-            // console.log("POST: ", this.state.rankedStats[i]);
+            console.log("**************this.state.rankedStats[i] **********************", this.state.rankedStats[i]);
         }
         this.getMatchHistory();
     };
