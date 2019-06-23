@@ -579,10 +579,7 @@ class Profilepage extends Component {
             //IF SUMMONER IS SUCCESSFULLY FOUND BY RIOT API
             <div>
                 <ProfileContainer className={this.state.theme}>
-                    <Nav
-                    // onChange={this.handleInputChange}
-                    // onClick={this.handleOnSubmit}
-                    />
+                    <Nav />
                     <ProfileBody>
                         <UserBanner>
                             <UserModule
@@ -590,7 +587,7 @@ class Profilepage extends Component {
                                 level={this.state.profile.summonerLevel}
                                 region={this.props.match.params.region}
                                 profileIcon={[
-                                    `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/profileicon/${
+                                    `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/profileicon/${
                                         this.state.profile.profileIconId
                                     }.png`
                                 ].join(" ")}
@@ -675,43 +672,43 @@ class Profilepage extends Component {
                                                 playerData.stats.goldSpent
                                             }
                                             item0={[
-                                                `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/item/${
+                                                `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/item/${
                                                     playerData.stats.item0
                                                 }.png`
                                             ].join(" ")}
                                             item0RawId={playerData.stats.item0.toString()}
                                             item1={[
-                                                `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/item/${
+                                                `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/item/${
                                                     playerData.stats.item1
                                                 }.png`
                                             ].join(" ")}
                                             item1RawId={playerData.stats.item1.toString()}
                                             item2={[
-                                                `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/item/${
+                                                `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/item/${
                                                     playerData.stats.item2
                                                 }.png`
                                             ].join(" ")}
                                             item2RawId={playerData.stats.item2.toString()}
                                             item3={[
-                                                `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/item/${
+                                                `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/item/${
                                                     playerData.stats.item3
                                                 }.png`
                                             ].join(" ")}
                                             item3RawId={playerData.stats.item3.toString()}
                                             item4={[
-                                                `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/item/${
+                                                `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/item/${
                                                     playerData.stats.item4
                                                 }.png`
                                             ].join(" ")}
                                             item4RawId={playerData.stats.item4.toString()}
                                             item5={[
-                                                `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/item/${
+                                                `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/item/${
                                                     playerData.stats.item5
                                                 }.png`
                                             ].join(" ")}
                                             item5RawId={playerData.stats.item5.toString()}
                                             item6={[
-                                                `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/item/${
+                                                `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/item/${
                                                     playerData.stats.item6
                                                 }.png`
                                             ].join(" ")}
