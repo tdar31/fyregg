@@ -122,22 +122,10 @@ class Home extends Component {
                         <i>
                             Try searching{" "}
                             <ReactRotatingText
-                                items={["TFblade", "Doublelift", "Goldenglue"]}
+                                items={["Goldenglue", "NightTalons", "Nercrotic"]}
                             />
                         </i>
                     </p>
-
-                    {/* <ul>
-            <Link
-              to={{
-                pathname: "/summoner/",
-                // search: "?username=" + this.state.queryUser,
-                onClick: this.handleOnSubmit
-              }}
-            >
-              <li>CLICK ME</li>
-            </Link>
-          </ul> */}
 
                     <SearchBar
                         queryUser={this.queryUser}
